@@ -116,6 +116,6 @@ const awand795 = {
 
 **Happy Coding!** 💻🚀
 
-![Visitor Count](https://profile-counter.glitch.me/awand795/count.svg)
+![Visitor Count](https://komarev.com/ghpvc/?username=awand795&color=2ea44f&style=flat-square)
 
 </div>
