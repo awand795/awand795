@@ -17,7 +17,7 @@
 const awand795 = {
     location: "Kuala, Sumatera Utara, Indonesia",
     focus: ["Backend Development", "Node.js", "API Design"],
-    learning: ["MEVN Stack", "System Design", "Clean Architecture"],
+    learning: ["React", "System Design", "Clean Architecture"],
     funFact: "😅 New Habits",
     motto: "Keep learning, keep building!"
 };
@@ -35,7 +35,7 @@ const awand795 = {
 ![REST API](https://img.shields.io/badge/REST_API-000000?style=for-the-badge&logo=api&logoColor=white)
 
 ### Frontend
-![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
@@ -74,12 +74,7 @@ const awand795 = {
 
 | Project | Description | Tech Stack |
 |---------|-------------|------------|
-| **[RestfulAPI-NodeJS](https://github.com/awand795/RestfulAPI-NodeJS)** | RESTful API implementation with Node.js | ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square) |
-| **[nodejs-loginsystem](https://github.com/awand795/nodejs-loginsystem)** | Authentication & login system | ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square) ![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat-square) |
-| **[MEVNStack-MicropostAPP](https://github.com/awand795/MEVNStack-MicropostAPP)** | Full-stack microblogging platform | ![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square) ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square) |
-| **[java-fcfs](https://github.com/awand795/java-fcfs)** | First Come First Served algorithm | ![Java](https://img.shields.io/badge/Java-007396?style=flat-square) |
-| **[java-sjf](https://github.com/awand795/java-sjf)** | Shortest Job First algorithm | ![Java](https://img.shields.io/badge/Java-007396?style=flat-square) |
-| **[simpel-perpus](https://github.com/awand795/simpel-perpus)** | Simple library management system | ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat-square) |
+| **[WEB-PORTFOLIO-FIXINGPROJECT](https://github.com/awand795/WEB-PORTFOLIO-FIXINGPROJECT)** | Personal portfolio website project | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square) |
 
 </div>
 
@@ -98,7 +93,7 @@ const awand795 = {
 ## 🎯 Currently Working On
 
 - 🔭 Building robust backend systems with Node.js
-- 🌱 Learning MEVN stack for full-stack development
+- 🌱 Learning React for frontend development
 - 💡 Exploring clean architecture patterns
 - 📚 Improving algorithm problem-solving skills
 
