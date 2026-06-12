@@ -58,7 +58,7 @@ const awand795 = {
 | **Stats & Languages** | **Current Streak** |
 | :---: | :---: |
 | ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=awand795&show_icons=true&theme=radical&count_private=true&hide_rank=false) | ![GitHub Streak](https://streak-stats.demolab.com?user=awand795&theme=radical) |
-| ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=awand795&layout=compact&theme=radical) | ![Activity Graph](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=awand795&theme=radical) |
+| ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=awand795&layout=compact&theme=radical) | ![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=awand795&theme=radical) |
 
 </div>
 
