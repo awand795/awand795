@@ -1,11 +1,11 @@
 <div align="center">
 
-# 👋 Hi, I'm AWANDA
+# 👋 Hi there, I'm AWANDA!
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=2ea44f&center=true&vCenter=true&width=435&lines=Backend+Developer;Node.js+Enthusiast;Full-Stack+Learner;Problem+Solver" alt="Typing SVG" />
 
 [![Location](https://img.shields.io/badge/Location-Sumatera%20Utara%2C%20Indonesia-25B976?style=for-the-badge&logo=google-maps)](https://www.google.com/maps/place/Sumatera+Utara)
 [![Website](https://img.shields.io/badge/Website-awanda.eu.org-2ea44f?style=for-the-badge&logo=google-chrome)](https://awanda.eu.org)
-
-**Backend Developer | Node.js Enthusiast | Full-Stack Learner**
 
 </div>
 
@@ -13,15 +13,27 @@
 
 ## 🚀 About Me
 
+I am a passionate **Backend Developer** based in Indonesia, focused on building scalable systems and exploring modern web technologies. I love turning complex problems into simple, elegant code.
+
 ```javascript
 const awand795 = {
     location: "Kuala, Sumatera Utara, Indonesia",
     focus: ["Backend Development", "Node.js", "API Design"],
     learning: ["React", "System Design", "Clean Architecture"],
-    funFact: "😅 New Habits",
+    funFact: "Always looking for new challenges 🚀",
     motto: "Keep learning, keep building!"
 };
 ```
+
+---
+
+## 🏆 GitHub Trophies
+
+<div align="center">
+
+[![trophies](https://github-profile-trophy.vercel.app/?username=awand795&theme=radical&no-bg=true&margin-w=15)](https://github.com/ryo-ma/github-profile-trophy)
+
+</div>
 
 ---
 
@@ -29,26 +41,11 @@ const awand795 = {
 
 <div align="center">
 
-### Backend
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![REST API](https://img.shields.io/badge/REST_API-000000?style=for-the-badge&logo=api&logoColor=white)
+### Backend & Languages
+[![My Skills](https://skill-icons.app/icons?i=nodejs,express,js,java,php,mongodb,mysql&theme=dark)](https://skill-icons.app)
 
-### Frontend
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-
-### Languages
-![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-
-### Database
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-
-### Tools
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+### Frontend & Tools
+[![My Skills](https://skill-icons.app/icons?i=react,html,css,git,github,vscode,postman&theme=dark)](https://skill-icons.app)
 
 </div>
 
@@ -58,13 +55,22 @@ const awand795 = {
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=awand795&show_icons=true&theme=radical&count_private=true&hide_rank=false)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=awand795&layout=compact&theme=radical)
-
-![GitHub Streak](https://streak-stats.demolab.com?user=awand795&theme=radical)
+| **Stats & Languages** | **Current Streak** |
+| :---: | :---: |
+| ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=awand795&show_icons=true&theme=radical&count_private=true&hide_rank=false) | ![GitHub Streak](https://streak-stats.demolab.com?user=awand795&theme=radical) |
+| ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=awand795&layout=compact&theme=radical) | ![Activity Graph](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=awand795&theme=radical) |
 
 </div>
+
+---
+
+## 🐍 Contribution Snake
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/awand795/awand795/output/github-contribution-grid-snake.svg" alt="snake" />
+</div>
+
+> *Note: This animation updates daily based on my activity!*
 
 ---
 
@@ -74,17 +80,7 @@ const awand795 = {
 
 | Project | Description | Tech Stack |
 |---------|-------------|------------|
-| **[WEB-PORTFOLIO-FIXINGPROJECT](https://github.com/awand795/WEB-PORTFOLIO-FIXINGPROJECT)** | Personal portfolio website project | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square) |
-
-</div>
-
----
-
-## 📈 Activity Graph
-
-<div align="center">
-
-![Activity Graph](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=awand795&theme=radical)
+| **[WEB-PORTFOLIO-FIXINGPROJECT](https://github.com/awand795/WEB-PORTFOLIO-FIXINGPROJECT)** | Personal portfolio website project | `JavaScript` `HTML` `CSS` |
 
 </div>
 
@@ -92,10 +88,10 @@ const awand795 = {
 
 ## 🎯 Currently Working On
 
-- 🔭 Building robust backend systems with Node.js
-- 🌱 Learning React for frontend development
-- 💡 Exploring clean architecture patterns
-- 📚 Improving algorithm problem-solving skills
+- 🔭 Building robust backend systems with **Node.js**
+- 🌱 Mastering **React** for advanced frontend development
+- 💡 Exploring **Clean Architecture** and **Microservices**
+- 📚 Sharpening my **Algorithm** & **Data Structure** skills
 
 ---
 
@@ -105,6 +101,8 @@ const awand795 = {
 
 [![Website](https://img.shields.io/badge/Website-2ea44f?style=for-the-badge&logo=google-chrome&logoColor=white)](https://awanda.eu.org)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/awand795)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/awanda)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/adnawaa)
 
 </div>
 
