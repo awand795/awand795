@@ -130,8 +130,3 @@ const awand795 = {
 ![Visitor Count](https://komarev.com/ghpvc/?username=awand795&color=2ea44f&style=flat-square)
 
 </div>
- 💻🚀
-
-![Visitor Count](https://komarev.com/ghpvc/?username=awand795&color=2ea44f&style=flat-square)
-
-</div>
