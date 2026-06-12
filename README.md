@@ -61,6 +61,8 @@ const awand795 = {
 | :---: | :---: |
 | ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=awand795&show_icons=true&theme=radical&count_private=true&hide_rank=false) | ![GitHub Streak](https://streak-stats.demolab.com?user=awand795&theme=radical) |
 | ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=awand795&layout=compact&theme=radical) | ![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=awand795&theme=radical) |
+| :---: | :---: |
+| ![Language Pie Chart](https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=awand795&theme=radical) | ![Commit Team](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=awand795&theme=radical) |
 
 </div>
 
