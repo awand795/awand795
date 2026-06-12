@@ -112,9 +112,17 @@ const awand795 = {
 
 <div align="center">
 
+### 💡 Quote of the Day
+![Coding Quotes](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
+
 ### ⭐ Thanks for visiting my profile!
 
 **Happy Coding!** 💻🚀
+
+![Visitor Count](https://komarev.com/ghpvc/?username=awand795&color=2ea44f&style=flat-square)
+
+</div>
+ 💻🚀
 
 ![Visitor Count](https://komarev.com/ghpvc/?username=awand795&color=2ea44f&style=flat-square)
 
