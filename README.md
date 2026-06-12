@@ -64,6 +64,14 @@ const awand795 = {
 
 </div>
 
+### 🕒 WakaTime Weekly Stats
+<div align="center">
+
+<!-- START_SECTION:waka -->
+<!-- END_SECTION:waka -->
+
+</div>
+
 ---
 
 ## 🐍 Contribution Snake
