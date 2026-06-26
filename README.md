@@ -13,13 +13,14 @@
 
 ## 🚀 About Me
 
-Backend developer from **Sumatera Utara, Indonesia**. I build scalable systems with **Node.js** and turn complex problems into simple, elegant code — clean architecture, one commit at a time.
+Backend developer from **Sumatera Utara, Indonesia**. I craft **scalable systems**, solve real-world problems, and explore new technologies — always learning, always building.
 
 ```javascript
 const awand795 = {
-    focus: ["Backend Development", "Node.js", "API Design"],
-    learning: ["React", "Clean Architecture"],
-    motto: "Keep learning, keep building!"
+    role: "Backend Developer",
+    location: "Sumatera Utara, Indonesia",
+    philosophy: "Learn, build, repeat",
+    currently: ["Exploring new tech", "Solving problems", "Writing clean code"]
 };
 ```
 
