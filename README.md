@@ -70,6 +70,20 @@ const awand795 = {
 <div align="center">
 
 <!--START_SECTION:waka-->
+
+```txt
+From: 18 June 2026 - To: 25 June 2026
+
+Total Time: 3 hrs 31 mins
+
+Java              1 hr 42 mins          ████████████░░░░░░░░░░░░░   48.33 %
+TypeScript        45 mins               █████▒░░░░░░░░░░░░░░░░░░░   21.58 %
+Java Properties   14 mins               █▓░░░░░░░░░░░░░░░░░░░░░░░   06.97 %
+PHP               12 mins               █▒░░░░░░░░░░░░░░░░░░░░░░░   05.80 %
+Docker            11 mins               █▒░░░░░░░░░░░░░░░░░░░░░░░   05.61 %
+Other             7 mins                ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.32 %
+```
+
 <!--END_SECTION:waka-->
 
 </div>
