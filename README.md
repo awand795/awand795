@@ -60,9 +60,7 @@ const awand795 = {
 | :---: | :---: |
 | ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=awand795&show_icons=true&theme=radical&count_private=true&hide_rank=false) | ![GitHub Streak](https://streak-stats.demolab.com?user=awand795&theme=radical) |
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=awand795&layout=compact&theme=radical)
-
-### 🕒 WakaTime Weekly Stats
+## 🕒 WakaTime Weekly Stats
 <!--START_SECTION:waka-->
 
 ```txt
