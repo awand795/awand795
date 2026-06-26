@@ -13,14 +13,12 @@
 
 ## 🚀 About Me
 
-I am a passionate **Backend Developer** based in Indonesia, focused on building scalable systems and exploring modern web technologies. I love turning complex problems into simple, elegant code.
+Backend developer from **Sumatera Utara, Indonesia**. I build scalable systems with **Node.js** and turn complex problems into simple, elegant code — clean architecture, one commit at a time.
 
 ```javascript
 const awand795 = {
-    location: "Kuala, Sumatera Utara, Indonesia",
     focus: ["Backend Development", "Node.js", "API Design"],
-    learning: ["React", "System Design", "Clean Architecture"],
-    funFact: "Always looking for new challenges 🚀",
+    learning: ["React", "Clean Architecture"],
     motto: "Keep learning, keep building!"
 };
 ```
@@ -31,23 +29,13 @@ const awand795 = {
 
 <div align="center">
 
-### Backend & Languages
 ![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
-![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
-
-### Frontend & Tools
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05032.svg?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
 </div>
 
@@ -56,6 +44,8 @@ const awand795 = {
 ## 📊 GitHub Stats
 
 <div align="center">
+
+![Profile Details](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=awand795&theme=radical)
 
 | | |
 | :---: | :---: |
@@ -137,7 +127,5 @@ Other             7 mins                ▓░░░░░░░░░░░░�
 ### ⭐ Thanks for visiting my profile!
 
 **Happy Coding!** 💻🚀
-
-![Visitor Count](https://komarev.com/ghpvc/?username=awand795&color=2ea44f&style=flat-square)
 
 </div>
