@@ -64,16 +64,18 @@ const awand795 = {
 <!--START_SECTION:waka-->
 
 ```txt
-From: 18 June 2026 - To: 25 June 2026
+From: 19 June 2026 - To: 26 June 2026
 
-Total Time: 3 hrs 31 mins
+Total Time: 5 hrs 1 min
 
-Java              1 hr 42 mins          ████████████░░░░░░░░░░░░░   48.33 %
-TypeScript        45 mins               █████▒░░░░░░░░░░░░░░░░░░░   21.58 %
-Java Properties   14 mins               █▓░░░░░░░░░░░░░░░░░░░░░░░   06.97 %
-PHP               12 mins               █▒░░░░░░░░░░░░░░░░░░░░░░░   05.80 %
-Docker            11 mins               █▒░░░░░░░░░░░░░░░░░░░░░░░   05.61 %
-Other             7 mins                ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.32 %
+Dart              1 hr 20 mins          ██████▓░░░░░░░░░░░░░░░░░░   26.60 %
+Java              1 hr 6 mins           █████▓░░░░░░░░░░░░░░░░░░░   22.03 %
+TypeScript        45 mins               ███▓░░░░░░░░░░░░░░░░░░░░░   15.14 %
+Git Config        38 mins               ███▒░░░░░░░░░░░░░░░░░░░░░   12.67 %
+YAML              22 mins               █▓░░░░░░░░░░░░░░░░░░░░░░░   07.31 %
+Java Properties   16 mins               █▒░░░░░░░░░░░░░░░░░░░░░░░   05.32 %
+PHP               10 mins               █░░░░░░░░░░░░░░░░░░░░░░░░   03.56 %
+Other             10 mins               █░░░░░░░░░░░░░░░░░░░░░░░░   03.50 %
 ```
 
 <!--END_SECTION:waka-->
