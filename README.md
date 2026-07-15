@@ -52,6 +52,16 @@ const awand795 = {
 
 ---
 
+## 📊 GitHub Streak
+
+<div align="center">
+
+![GitHub Streak](https://streak-stats.demolab.com?user=awand795&theme=radical)
+
+</div>
+
+---
+
 ## 🕒 WakaTime Weekly Stats
 <!--START_SECTION:waka-->
 
