@@ -66,18 +66,16 @@ const awand795 = {
 <!--START_SECTION:waka-->
 
 ```txt
-From: 06 July 2026 - To: 13 July 2026
+From: 07 July 2026 - To: 14 July 2026
 
-Total Time: 24 mins
+Total Time: 35 mins
 
-YAML         9 mins                ██████████░░░░░░░░░░░░░░░   40.55 %
-Java         4 mins                █████░░░░░░░░░░░░░░░░░░░░   20.12 %
-Markdown     3 mins                ███▓░░░░░░░░░░░░░░░░░░░░░   14.59 %
-Bash         3 mins                ███▓░░░░░░░░░░░░░░░░░░░░░   14.45 %
-JSON         2 mins                ██▒░░░░░░░░░░░░░░░░░░░░░░   09.22 %
-PowerShell   0 secs                ░░░░░░░░░░░░░░░░░░░░░░░░░   00.55 %
-TypeScript   0 secs                ░░░░░░░░░░░░░░░░░░░░░░░░░   00.42 %
-Python       0 secs                ░░░░░░░░░░░░░░░░░░░░░░░░░   00.09 %
+Java         21 mins               ███████████████▒░░░░░░░░░   61.26 %
+YAML         9 mins                ███████░░░░░░░░░░░░░░░░░░   27.76 %
+Bash         3 mins                ██▒░░░░░░░░░░░░░░░░░░░░░░   09.89 %
+JSON         0 secs                ░░░░░░░░░░░░░░░░░░░░░░░░░   00.43 %
+PowerShell   0 secs                ░░░░░░░░░░░░░░░░░░░░░░░░░   00.38 %
+TypeScript   0 secs                ░░░░░░░░░░░░░░░░░░░░░░░░░   00.28 %
 ```
 
 <!--END_SECTION:waka-->
