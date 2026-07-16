@@ -37,7 +37,7 @@ TEMPLATE_FILES = [
     "agent-console-mobile-light.svg.template",
 ]
 
-OUTPUT_FILES = [f.replace(".template", "") for f in TEMPLATE_FILES]
+OUTPUT_FILES = [f.replace(".template", "").replace(".svg", "-v2.svg") for f in TEMPLATE_FILES]
 
 # Fallback defaults in case the API call fails
 DEFAULT_REPOS = "-"

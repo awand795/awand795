@@ -44,7 +44,7 @@ jobs:
         run: sudo apt-get install -y librsvg2-bin
 
       - name: Strip animations & generate static SVG for PNG
-        run: python scripts/strip_svg_animations.py assets/hero/agent-console-dark.svg assets/hero/agent-console-static.svg
+        run: python scripts/strip_svg_animations.py assets/hero/agent-console-dark-v2.svg assets/hero/agent-console-static.svg
 
       - name: Generate PNG fallback from static SVG
         run: |
