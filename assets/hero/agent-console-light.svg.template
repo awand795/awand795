@@ -11,6 +11,7 @@
   <pattern id="portrait-grid" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M 44 0 H 0 V 44" fill="none" stroke="#334155" stroke-width="0.65" opacity="0.06"/><circle cx="0" cy="0" r="1.2" fill="#059669" opacity="0.1"/></pattern>
   <clipPath id="portrait-clip"><rect x="24" y="82" width="470" height="438" rx="12"/></clipPath>
   <mask id="portrait-reveal"><rect x="24" y="82" width="470" height="0" rx="12" fill="white"><animate attributeName="height" from="0" to="438" dur="2.1s" begin="0.12s" fill="freeze"/></rect></mask>
+  <clipPath id="avatar-clip"><circle cx="259" cy="301" r="96"/></clipPath>
   
   <clipPath id="sys-0"><rect x="525" y="66.00" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="0.68s" fill="freeze"/></rect></clipPath>
   <clipPath id="sys-1"><rect x="525" y="87.50" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="0.79s" fill="freeze"/></rect></clipPath>
@@ -105,7 +106,6 @@
   
   <style>
     .mono { font-family: 'Courier New', Consolas, monospace; }
-    .ascii { font-family: 'Courier New', Consolas, monospace; font-size: 6px; letter-spacing: -0.15px; fill: url(#signal); }
     .panel-title { font-family: 'Courier New', Consolas, monospace; font-size: 11px; letter-spacing: 2px; fill: #059669; opacity: 0.8; }
     .terminal-label { font-family: 'Courier New', Consolas, monospace; font-size: 13px; letter-spacing: 0.5px; fill: #475569; }
     .live-label { font-family: 'Courier New', Consolas, monospace; font-size: 10px; letter-spacing: 1px; fill: #DC2626; }
@@ -188,74 +188,21 @@
   </g>
 </g>
 
-<!-- ASCII Art Portrait -->
+<!-- GitHub Avatar Profile Picture -->
 <g clip-path="url(#portrait-clip)" mask="url(#portrait-reveal)">
-  <text class="ascii" font-family="'Courier New', Consolas, monospace" font-size="6px" letter-spacing="-0.15px">
-    <tspan x="48" y="90.00" xml:space="preserve">                                                                                                </tspan>
-    <tspan x="48" y="96.50" xml:space="preserve">                                                                                                </tspan>
-    <tspan x="48" y="103.00" xml:space="preserve">                                                                                                </tspan>
-    <tspan x="48" y="109.50" xml:space="preserve">                                    .,:;+*?%@@@@@@@@@%?*+;:,.                                  </tspan>
-    <tspan x="48" y="116.00" xml:space="preserve">                                .:+*%@@@@@@@@@@@@@@@@@@@@@@@@@%*+:.                              </tspan>
-    <tspan x="48" y="122.50" xml:space="preserve">                             ;*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*;                           </tspan>
-    <tspan x="48" y="129.00" xml:space="preserve">                         .+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+.                       </tspan>
-    <tspan x="48" y="135.50" xml:space="preserve">                       *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*                      </tspan>
-    <tspan x="48" y="142.00" xml:space="preserve">                    .%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%.                   </tspan>
-    <tspan x="48" y="148.50" xml:space="preserve">                   +@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+                  </tspan>
-    <tspan x="48" y="155.00" xml:space="preserve">                 .%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%.                </tspan>
-    <tspan x="48" y="161.50" xml:space="preserve">                 %@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%                </tspan>
-    <tspan x="48" y="168.00" xml:space="preserve">                +@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+               </tspan>
-    <tspan x="48" y="174.50" xml:space="preserve">               .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.              </tspan>
-    <tspan x="48" y="181.00" xml:space="preserve">               *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*              </tspan>
-    <tspan x="48" y="187.50" xml:space="preserve">              .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.             </tspan>
-    <tspan x="48" y="194.00" xml:space="preserve">              ;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@;             </tspan>
-    <tspan x="48" y="200.50" xml:space="preserve">              *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*             </tspan>
-    <tspan x="48" y="207.00" xml:space="preserve">              *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*             </tspan>
-    <tspan x="48" y="213.50" xml:space="preserve">              ;@@@@@@@@@@@@@@@@@@@%*+++++++++*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@;             </tspan>
-    <tspan x="48" y="220.00" xml:space="preserve">              .@@@@@@@@@@@@@@@@#;                ;#@@@@@@@@@@@@@@@@@@@@@@@@@@@@.             </tspan>
-    <tspan x="48" y="226.50" xml:space="preserve">               *@@@@@@@@@@@@@%:    ..,:;;:,.     :%@@@@@@@@@@@@@@@@@@@@@@@@@*              </tspan>
-    <tspan x="48" y="233.00" xml:space="preserve">               .@@@@@@@@@@@@*   ,*%@@@@@@@%*:    *@@@@@@@@@@@@@@@@@@@@@@@@@.              </tspan>
-    <tspan x="48" y="239.50" xml:space="preserve">                +@@@@@@@@@@?  .%@@@@@@@@@@@@@%.  ?@@@@@@@@@@@@@@@@@@@@@@@@+               </tspan>
-    <tspan x="48" y="246.00" xml:space="preserve">                 *@@@@@@@@@%  ;@@@@@@@@@@@@@@@%  %@@@@@@@@@@@@@@@@@@@@@@*                </tspan>
-    <tspan x="48" y="252.50" xml:space="preserve">                 .%@@@@@@@@@? *@@@@@@@@@@@@@@@* ?@@@@@@@@@@@@@@@@@@@@%.                 </tspan>
-    <tspan x="48" y="259.00" xml:space="preserve">                   %@@@@@@@@@@=+@@@@@@@@@@@@@@@+=@@@@@@@@@@@@@@@@@@@%                   </tspan>
-    <tspan x="48" y="265.50" xml:space="preserve">                   .*@@@@@@@@@@%@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@*.                    </tspan>
-    <tspan x="48" y="272.00" xml:space="preserve">                     :*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%*:                      </tspan>
-    <tspan x="48" y="278.50" xml:space="preserve">                        .:+*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%*+:.                        </tspan>
-    <tspan x="48" y="285.00" xml:space="preserve">                            .,:;+*?%@@@@@@@@@@@@@%?*+;:,.                            </tspan>
-    <tspan x="48" y="291.50" xml:space="preserve">                                                                                                </tspan>
-    <tspan x="48" y="298.00" xml:space="preserve">                          ..,;:...              ...,;:...                          </tspan>
-    <tspan x="48" y="304.50" xml:space="preserve">                     .:+#@@@@@@%*:               :*%@@@@@@#+:                     </tspan>
-    <tspan x="48" y="311.00" xml:space="preserve">                   :%@@@@@@@@@@@%:             :%@@@@@@@@@@@%:                   </tspan>
-    <tspan x="48" y="317.50" xml:space="preserve">                  +@@@@@@@@@@@@@@@+           +@@@@@@@@@@@@@@@+                  </tspan>
-    <tspan x="48" y="324.00" xml:space="preserve">                 *@@@@@@@@@@@@@@@@@*         *@@@@@@@@@@@@@@@@@*                 </tspan>
-    <tspan x="48" y="330.50" xml:space="preserve">                .@@@@@@@@@@@@@@@@@@@.       .@@@@@@@@@@@@@@@@@@@.                </tspan>
-    <tspan x="48" y="337.00" xml:space="preserve">                *@@@@@@@@@@@@@@@@@@@*       *@@@@@@@@@@@@@@@@@@@*                </tspan>
-    <tspan x="48" y="343.50" xml:space="preserve">               .@@@@@@@@@@@@@@@@@@@@@.     .@@@@@@@@@@@@@@@@@@@@@.               </tspan>
-    <tspan x="48" y="350.00" xml:space="preserve">               :@@@@@@@@@@@@@@@@@@@@@;     ;@@@@@@@@@@@@@@@@@@@@@:               </tspan>
-    <tspan x="48" y="356.50" xml:space="preserve">               ?@@@@@@@@@@@@@@@@@@@@@@?    ?@@@@@@@@@@@@@@@@@@@@@@?               </tspan>
-    <tspan x="48" y="363.00" xml:space="preserve">               *@@@@@@@@@@@@@@@@@@@@@@%   *@@@@@@@@@@@@@@@@@@@@@@*               </tspan>
-    <tspan x="48" y="369.50" xml:space="preserve">               .@@@@@@@@@@@@@@@@@@@@@@@. .@@@@@@@@@@@@@@@@@@@@@@@.               </tspan>
-    <tspan x="48" y="376.00" xml:space="preserve">                %@@@@@@@@@@@@@@@@@@@@@@@  %@@@@@@@@@@@@@@@@@@@@@@%                </tspan>
-    <tspan x="48" y="382.50" xml:space="preserve">                .@@@@@@@@@@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@@@.                </tspan>
-    <tspan x="48" y="389.00" xml:space="preserve">                 *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*                 </tspan>
-    <tspan x="48" y="395.50" xml:space="preserve">                  *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*                  </tspan>
-    <tspan x="48" y="402.00" xml:space="preserve">                   :%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%:                   </tspan>
-    <tspan x="48" y="408.50" xml:space="preserve">                     :*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*:                     </tspan>
-    <tspan x="48" y="415.00" xml:space="preserve">                       .;*@@@@@@@@@@@@@@@@@@@@@@@@@@@*;.                       </tspan>
-    <tspan x="48" y="421.50" xml:space="preserve">                          .:+%@@@@@@@@@@@@@@@@@@@%+:                          </tspan>
-    <tspan x="48" y="428.00" xml:space="preserve">                              ,+%@@@@@@@@@@@@@@?                              </tspan>
-    <tspan x="48" y="434.50" xml:space="preserve">                                :%@@@@@@@@@@@:                                </tspan>
-    <tspan x="48" y="441.00" xml:space="preserve">                                  +@@@@@@@+                                  </tspan>
-    <tspan x="48" y="447.50" xml:space="preserve">                                    *@@@*                                     </tspan>
-    <tspan x="48" y="454.00" xml:space="preserve">                                     .?                                      </tspan>
-    <tspan x="48" y="460.50" xml:space="preserve">                                                                                                </tspan>
-    <tspan x="48" y="467.00" xml:space="preserve">                                                                                                </tspan>
-    <tspan x="48" y="473.50" xml:space="preserve">                                                                                                </tspan>
-    <tspan x="48" y="480.00" xml:space="preserve">                                                                                                </tspan>
-    <tspan x="48" y="486.50" xml:space="preserve">                                                                                                </tspan>
-    <tspan x="48" y="493.00" xml:space="preserve">                                                                                                </tspan>
-    <tspan x="48" y="499.50" xml:space="preserve">                                                                                                </tspan>
-  </text>
+  <!-- Profile image clipped to circle -->
+  <image clip-path="url(#avatar-clip)" href="{{ AVATAR_DATA_URI }}" x="163" y="205" width="192" height="192" preserveAspectRatio="xMidYMid slice"/>
+  
+  <!-- Colored border ring -->
+  <circle cx="259" cy="301" r="96" fill="none" stroke="url(#signal)" stroke-width="3" opacity="0.7"/>
+  
+  <!-- Animated outer glow ring -->
+  <circle cx="259" cy="301" r="102" fill="none" stroke="#059669" stroke-width="1" opacity="0.25" stroke-dasharray="6 10">
+    <animateTransform attributeName="transform" type="rotate" from="0 259 301" to="360 259 301" dur="24s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="259" cy="301" r="110" fill="none" stroke="#7C3AED" stroke-width="0.8" opacity="0.15" stroke-dasharray="2 14">
+    <animateTransform attributeName="transform" type="rotate" from="360 259 301" to="0 259 301" dur="30s" repeatCount="indefinite"/>
+  </circle>
 </g>
 
 <!-- Right Panel - System Info -->
