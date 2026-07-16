@@ -320,8 +320,11 @@ def fetch_ascii_portrait(avatar_url: str | None, width: int = 82, max_rows: int 
 
             # Use separate <text> element per line with clip-path attribute
             # This is SVG 1.1 compliant (unlike <g> inside <text> which librsvg drops)
+            # Inline font-family/font-size as defensive fallback in case CSS stripped by sanitizer
             lines.append(
-                f'<text class="ascii" x="{start_x:.1f}" y="{y_pos:.2f}" '
+                f'<text class="ascii" '
+                f'font-family="\'Courier New\',Consolas,monospace" font-size="6.5px" '
+                f'x="{start_x:.1f}" y="{y_pos:.2f}" '
                 f'clip-path="url(#typing-{y})" xml:space="preserve">{row}</text>'
             )
 

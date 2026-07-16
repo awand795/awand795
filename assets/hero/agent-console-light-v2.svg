@@ -171,7 +171,7 @@
 <circle cx="60" cy="20" r="5" fill="#10B981"><animate attributeName="opacity" values="1;0.55;1" dur="4s" begin="0.6s" repeatCount="indefinite"/></circle>
 <text x="590" y="25" text-anchor="middle" class="terminal-label">awand795@dev ~ % ./profile --live</text>
 <circle cx="1039" cy="20" r="4" fill="#DC2626"><animate attributeName="opacity" values="1;0.15;1" dur="1.1s" repeatCount="indefinite"/></circle>
-<text x="1049" y="24" class="live-label">ACTIVE | 4m ago</text>
+<text x="1049" y="24" class="live-label">ACTIVE | 1m ago</text>
 
 <!-- Panels Background -->
 <rect x="14" y="64" width="488" height="468" rx="14" fill="#FFFFFF" fill-opacity="0.5" stroke="url(#border)" stroke-opacity="0.42"/>
@@ -236,51 +236,51 @@
 <!-- ASCII Art Portrait (generated from GitHub avatar) -->
 <g clip-path="url(#portrait-clip)">
   <text class="ascii" font-family="'Courier New', Consolas, monospace" font-size="6.5px" letter-spacing="-0.15px">
-<text class="ascii" x="99.1" y="140.12" clip-path="url(#typing-0)" xml:space="preserve">....::::-=-----=---==---=+##*+*==*##%%%##*==-:. :::. :::.:-=+*##%*++#%%*=====-*@##</text>
-<text class="ascii" x="99.1" y="147.28" clip-path="url(#typing-1)" xml:space="preserve">::::-----==--------=+-===*+======++**%@##*==::. .::..::-:--++*####**%#%*=+=--*#@#*</text>
-<text class="ascii" x="99.1" y="154.43" clip-path="url(#typing-2)" xml:space="preserve">-:-----*%#%###**##*++-==-=+**+*+**+#%@#**=-=-::..:::.::::--=*#@@@@@@@%%+----=@%%**</text>
-<text class="ascii" x="99.1" y="161.57" clip-path="url(#typing-3)" xml:space="preserve">::::-+#@%%@@%%@%@@@@%+=-=*@@@@@@##+*%@**+===---::...::::---+**#####%@##=:--:+@##**</text>
-<text class="ascii" x="99.1" y="168.72" clip-path="url(#typing-4)" xml:space="preserve">--:-*@@@@@%##%#%@@@@#@@*+#+-=+#@%#+*%@###*+=-:::::..:-::-===*#%#####%%%=-==-*@#%**</text>
-<text class="ascii" x="99.1" y="175.88" clip-path="url(#typing-5)" xml:space="preserve">=+#%@%%#%%%##%%#***#%%%@#.     .%#**#%@%%#*=---::..:.::.---=+#@%@@@@@@@@@@@@@###**</text>
-<text class="ascii" x="99.1" y="183.03" clip-path="url(#typing-6)" xml:space="preserve">@@@%%#@@%%%%@%%%####*##%*     . -@%@#%@@%@%+=-::-:..:.:.-==*##%%%#**#%+*++*#@#%#**</text>
-<text class="ascii" x="99.1" y="190.18" clip-path="url(#typing-7)" xml:space="preserve">%%%##%#**++**%%%%%##+***+==-+++*+@%%#%@@@%#+=--:::..:..:-==*##%%#***+++==-=*%###*+</text>
-<text class="ascii" x="99.1" y="197.32" clip-path="url(#typing-8)" xml:space="preserve">%#****##*+**+*###*++#**%#%%###*#@@%%%%@@@#**=--::...::::-=++**#@%#%##########%%###</text>
-<text class="ascii" x="99.1" y="204.48" clip-path="url(#typing-9)" xml:space="preserve">+==*#*******#*##%###%==#@@%****#@@@#@@@@@@%*=----..:::::-+=**#@@@@@@@@@@@@@@@@@%%@</text>
-<text class="ascii" x="99.1" y="211.62" clip-path="url(#typing-10)" xml:space="preserve">**###+--=+##%**##%%%@--#@@%****+*#@###%@%%*+=---::::.:---=+*#%@@@@@@@%@@@#+##*##*#</text>
-<text class="ascii" x="99.1" y="218.78" clip-path="url(#typing-11)" xml:space="preserve">@@%@@@=-*+*@%*+:+@@@@*#%%%%+##**-.%%%%###*+==--:...:..::-==+*###**#%%%#%%%*##**#*#</text>
-<text class="ascii" x="99.1" y="225.93" clip-path="url(#typing-12)" xml:space="preserve">@@%#@%+:**=:==-:-*%%%%###%##%@%%:.%%%#%%#*+=--::.:-:.:-::=++*#%%%%@@@@@@@@@@@@@@@@</text>
-<text class="ascii" x="99.1" y="233.07" clip-path="url(#typing-13)" xml:space="preserve">#%%*##+++**+*-:-=*%%##*##%##%@%%-:%%###%@#*+---:::::::::-=++*%@@@@@@@@@@@@@@@@@@@@</text>
-<text class="ascii" x="99.1" y="240.23" clip-path="url(#typing-14)" xml:space="preserve">@@@@@@%#=++***#%@@%%%#**#%%#%@@@+-%%###%@@@*=--:.:--..::===*#%@@@@@@@@@@@@@@@@@@@@</text>
-<text class="ascii" x="99.1" y="247.38" clip-path="url(#typing-15)" xml:space="preserve">*+*#@%#*%%@@@@@@@%%%#%+=%####%@%%-#%#####%@@*-:.-=-..:::--=*%%@@@@@@@@@@@@@@@@@@@@</text>
-<text class="ascii" x="99.1" y="254.53" clip-path="url(#typing-16)" xml:space="preserve">*+**%@@%@%@@@%%%#%%##*+*##*###%%+-######*##%@=:.:::.:----=+*#%@@@@@@@@@@@@%@@@@@@@</text>
-<text class="ascii" x="99.1" y="261.68" clip-path="url(#typing-17)" xml:space="preserve">@@%##***+++++##%%#%%#*#%##**:.:. =##***==+#*#=:...:::----+***%@@@@@@@@@@@@@@@@@@@@</text>
-<text class="ascii" x="99.1" y="268.83" clip-path="url(#typing-18)" xml:space="preserve">@@@@@@@%%###%%%@@#%###*=++=:    .###***%#+*##*::. :-:---=+**##%@@@@@@@@@@@@@@@@%%@</text>
-<text class="ascii" x="99.1" y="275.98" clip-path="url(#typing-19)" xml:space="preserve">@@@@@@@@@@@@@@@@@@#+*=..-.    .=**#%##*#@*=##*+-:.::..:--*#####%%%@@@@@@%%%%%%@%%@</text>
-<text class="ascii" x="99.1" y="283.12" clip-path="url(#typing-20)" xml:space="preserve">@@@@@@@@@@@@@@@@@@%-++.+#*=--=#%%####***#**++*++:...:::-=*####*#%@@@@@@@@@@@@%%%%@</text>
-<text class="ascii" x="99.1" y="290.27" clip-path="url(#typing-21)" xml:space="preserve">@@@@@@@@@@@@@@@@@@@+=%%@@@@@@%%%%@@@@%*###***#+*#*#*::==+###%#%@@@@@@@@@@@@@@@%%@@</text>
-<text class="ascii" x="99.1" y="297.43" clip-path="url(#typing-22)" xml:space="preserve">@@@@@@@@@@@@@@@@@@@#+*@%%%%%%%%@%%%%%@@@@@%%@@=*@@@@*:=-+*#%@@@@@@@@@@@@@@@@@@@@@@</text>
-<text class="ascii" x="99.1" y="304.58" clip-path="url(#typing-23)" xml:space="preserve">@@@@@@@@@@@@@@@@@@@+::#####*##*#%########%##%#+@@@@%@%%*+++***########%%@@@@@@@@@@</text>
-<text class="ascii" x="99.1" y="311.73" clip-path="url(#typing-24)" xml:space="preserve">@@@@@@@@@@@@@@@@%%%*-:=*+++==:  :+%%%@%#+=*#%*=*#%@@@@@@*+++****######*###%@@@@@@@</text>
-<text class="ascii" x="99.1" y="318.88" clip-path="url(#typing-25)" xml:space="preserve">@@@@@@@@@@@@%%##%%%#=--=-:-:.  ...*@%@%%* -+*==++*#@@@@@++++***#####*******#%@@@@@</text>
-<text class="ascii" x="99.1" y="326.02" clip-path="url(#typing-26)" xml:space="preserve">@@@@@@%%%%##%%%%#*##=-.==---=======#%%%%*.-**+**+**+*@@=-+++***######**###***@@@@@</text>
-<text class="ascii" x="99.1" y="333.18" clip-path="url(#typing-27)" xml:space="preserve">@@@%#*****++*****++=-: .:=--##*###**%%%#*:.**+*#*+*::==-:-+++**###########**+*%%@%</text>
-<text class="ascii" x="99.1" y="340.33" clip-path="url(#typing-28)" xml:space="preserve">##****+++===+=+=--::-:-=+*+-+#%#*###@@%##--=+**+***-:--------=+++***++++===--+%###</text>
-<text class="ascii" x="99.1" y="347.48" clip-path="url(#typing-29)" xml:space="preserve">*###**++*+=---::  -=+==#@*=:=++*++=+@@@##=-=*++**++-:==----------:--:-::.:---#@@##</text>
-<text class="ascii" x="99.1" y="354.62" clip-path="url(#typing-30)" xml:space="preserve">-=----===-.:.  :=+#%=--**==.-==++-=-%@@%#-:-*++**++=-=+==-=-=-----:::---:---+*##%%</text>
-<text class="ascii" x="99.1" y="361.77" clip-path="url(#typing-31)" xml:space="preserve">...-+==-....:-=+****+=-====-==+=-=-=%@@%#-.:+-==+=---==+==--=----=--:::::-==+%#%*#</text>
-<text class="ascii" x="99.1" y="368.93" clip-path="url(#typing-32)" xml:space="preserve">:-++#*=-==+***++*+*##*+*+*%#*=-:::--#%%@#-..::-===-:-=====----:-:----::::--=+###%%</text>
-<text class="ascii" x="99.1" y="376.08" clip-path="url(#typing-33)" xml:space="preserve">#%***+++#****+*#%*+***++**#@@%= -:-=##%%%-::.----..:-==++==+=----------::::-=+***%</text>
-<text class="ascii" x="99.1" y="383.23" clip-path="url(#typing-34)" xml:space="preserve">*+**++*++*##*##**+++*+++***%@@#-:.-=**#%@-.::::--: .-=====++=+-----===-:::--=-+#+*</text>
-<text class="ascii" x="99.1" y="390.38" clip-path="url(#typing-35)" xml:space="preserve">**#*#******#****++++++++#%%#%@#- ..-*###%=::::.  -:.:-=================------=###*</text>
-<text class="ascii" x="99.1" y="397.53" clip-path="url(#typing-36)" xml:space="preserve">%%***+*###%@***#*++**++#####*##=.. .=*#%@%:::---.:::.:----==----===-====--:--=+***</text>
-<text class="ascii" x="99.1" y="404.68" clip-path="url(#typing-37)" xml:space="preserve">*+==*+=##*%#***##*#++*#%%%#%%*--.   :+#%@@%:--:--:-:: ::.:::-----==-==-=---=-++#@@</text>
-<text class="ascii" x="99.1" y="411.82" clip-path="url(#typing-38)" xml:space="preserve">%*==++=++*=+=+++***++###%%%%#+-.     .*#@@@%-::-:.-=-:--...:::--==:----::.:=+#@%##</text>
-<text class="ascii" x="99.1" y="418.98" clip-path="url(#typing-39)" xml:space="preserve">##*++#+=*#+*+++==+*#**#%%%%%*-...     :#%@@@#:-..-=: --::-:..:-==-==-:-=+++%@@%%##</text>
-<text class="ascii" x="99.1" y="426.12" clip-path="url(#typing-40)" xml:space="preserve">@%*+===*+####+=++*#%@%%@%@#=:.... . . .*%@@@@-.-=:.:==: .-:.:==:-:-==--+#%@%%%%%%%</text>
-<text class="ascii" x="99.1" y="433.28" clip-path="url(#typing-41)" xml:space="preserve">*=--++=#*#+=***##+#%@%@@#+:.::...      .+**+=:-+==:-++::--::-===+::-=+#%%%%%%%%%%%</text>
-<text class="ascii" x="99.1" y="440.43" clip-path="url(#typing-42)" xml:space="preserve">+---==-=*+##%++*%##%@@#+-:..:.:::  .  :  .::-=-+**==*-.::---===+*=-+#%###%%%%%%%##</text>
-<text class="ascii" x="99.1" y="447.57" clip-path="url(#typing-43)" xml:space="preserve">++=++*###+*##+++#@@%#-:.:::.:.:::  ...:::---+*+-=+=+#=-*:.=+=++-=*%@@%%####%######</text>
-<text class="ascii" x="99.1" y="454.73" clip-path="url(#typing-44)" xml:space="preserve">##*%*#%*+=+*%%*%#++--::::::....::.   ..:=-.:==:-+=:*%*==-...-*+*%%%%%%%%%#**######</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="140.12" clip-path="url(#typing-0)" xml:space="preserve">....::::-=-----=---==---=+##*+*==*##%%%##*==-:. :::. :::.:-=+*##%*++#%%*=====-*@##</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="147.28" clip-path="url(#typing-1)" xml:space="preserve">::::-----==--------=+-===*+======++**%@##*==::. .::..::-:--++*####**%#%*=+=--*#@#*</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="154.43" clip-path="url(#typing-2)" xml:space="preserve">-:-----*%#%###**##*++-==-=+**+*+**+#%@#**=-=-::..:::.::::--=*#@@@@@@@%%+----=@%%**</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="161.57" clip-path="url(#typing-3)" xml:space="preserve">::::-+#@%%@@%%@%@@@@%+=-=*@@@@@@##+*%@**+===---::...::::---+**#####%@##=:--:+@##**</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="168.72" clip-path="url(#typing-4)" xml:space="preserve">--:-*@@@@@%##%#%@@@@#@@*+#+-=+#@%#+*%@###*+=-:::::..:-::-===*#%#####%%%=-==-*@#%**</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="175.88" clip-path="url(#typing-5)" xml:space="preserve">=+#%@%%#%%%##%%#***#%%%@#.     .%#**#%@%%#*=---::..:.::.---=+#@%@@@@@@@@@@@@@###**</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="183.03" clip-path="url(#typing-6)" xml:space="preserve">@@@%%#@@%%%%@%%%####*##%*     . -@%@#%@@%@%+=-::-:..:.:.-==*##%%%#**#%+*++*#@#%#**</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="190.18" clip-path="url(#typing-7)" xml:space="preserve">%%%##%#**++**%%%%%##+***+==-+++*+@%%#%@@@%#+=--:::..:..:-==*##%%#***+++==-=*%###*+</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="197.32" clip-path="url(#typing-8)" xml:space="preserve">%#****##*+**+*###*++#**%#%%###*#@@%%%%@@@#**=--::...::::-=++**#@%#%##########%%###</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="204.48" clip-path="url(#typing-9)" xml:space="preserve">+==*#*******#*##%###%==#@@%****#@@@#@@@@@@%*=----..:::::-+=**#@@@@@@@@@@@@@@@@@%%@</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="211.62" clip-path="url(#typing-10)" xml:space="preserve">**###+--=+##%**##%%%@--#@@%****+*#@###%@%%*+=---::::.:---=+*#%@@@@@@@%@@@#+##*##*#</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="218.78" clip-path="url(#typing-11)" xml:space="preserve">@@%@@@=-*+*@%*+:+@@@@*#%%%%+##**-.%%%%###*+==--:...:..::-==+*###**#%%%#%%%*##**#*#</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="225.93" clip-path="url(#typing-12)" xml:space="preserve">@@%#@%+:**=:==-:-*%%%%###%##%@%%:.%%%#%%#*+=--::.:-:.:-::=++*#%%%%@@@@@@@@@@@@@@@@</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="233.07" clip-path="url(#typing-13)" xml:space="preserve">#%%*##+++**+*-:-=*%%##*##%##%@%%-:%%###%@#*+---:::::::::-=++*%@@@@@@@@@@@@@@@@@@@@</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="240.23" clip-path="url(#typing-14)" xml:space="preserve">@@@@@@%#=++***#%@@%%%#**#%%#%@@@+-%%###%@@@*=--:.:--..::===*#%@@@@@@@@@@@@@@@@@@@@</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="247.38" clip-path="url(#typing-15)" xml:space="preserve">*+*#@%#*%%@@@@@@@%%%#%+=%####%@%%-#%#####%@@*-:.-=-..:::--=*%%@@@@@@@@@@@@@@@@@@@@</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="254.53" clip-path="url(#typing-16)" xml:space="preserve">*+**%@@%@%@@@%%%#%%##*+*##*###%%+-######*##%@=:.:::.:----=+*#%@@@@@@@@@@@@%@@@@@@@</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="261.68" clip-path="url(#typing-17)" xml:space="preserve">@@%##***+++++##%%#%%#*#%##**:.:. =##***==+#*#=:...:::----+***%@@@@@@@@@@@@@@@@@@@@</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="268.83" clip-path="url(#typing-18)" xml:space="preserve">@@@@@@@%%###%%%@@#%###*=++=:    .###***%#+*##*::. :-:---=+**##%@@@@@@@@@@@@@@@@%%@</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="275.98" clip-path="url(#typing-19)" xml:space="preserve">@@@@@@@@@@@@@@@@@@#+*=..-.    .=**#%##*#@*=##*+-:.::..:--*#####%%%@@@@@@%%%%%%@%%@</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="283.12" clip-path="url(#typing-20)" xml:space="preserve">@@@@@@@@@@@@@@@@@@%-++.+#*=--=#%%####***#**++*++:...:::-=*####*#%@@@@@@@@@@@@%%%%@</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="290.27" clip-path="url(#typing-21)" xml:space="preserve">@@@@@@@@@@@@@@@@@@@+=%%@@@@@@%%%%@@@@%*###***#+*#*#*::==+###%#%@@@@@@@@@@@@@@@%%@@</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="297.43" clip-path="url(#typing-22)" xml:space="preserve">@@@@@@@@@@@@@@@@@@@#+*@%%%%%%%%@%%%%%@@@@@%%@@=*@@@@*:=-+*#%@@@@@@@@@@@@@@@@@@@@@@</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="304.58" clip-path="url(#typing-23)" xml:space="preserve">@@@@@@@@@@@@@@@@@@@+::#####*##*#%########%##%#+@@@@%@%%*+++***########%%@@@@@@@@@@</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="311.73" clip-path="url(#typing-24)" xml:space="preserve">@@@@@@@@@@@@@@@@%%%*-:=*+++==:  :+%%%@%#+=*#%*=*#%@@@@@@*+++****######*###%@@@@@@@</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="318.88" clip-path="url(#typing-25)" xml:space="preserve">@@@@@@@@@@@@%%##%%%#=--=-:-:.  ...*@%@%%* -+*==++*#@@@@@++++***#####*******#%@@@@@</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="326.02" clip-path="url(#typing-26)" xml:space="preserve">@@@@@@%%%%##%%%%#*##=-.==---=======#%%%%*.-**+**+**+*@@=-+++***######**###***@@@@@</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="333.18" clip-path="url(#typing-27)" xml:space="preserve">@@@%#*****++*****++=-: .:=--##*###**%%%#*:.**+*#*+*::==-:-+++**###########**+*%%@%</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="340.33" clip-path="url(#typing-28)" xml:space="preserve">##****+++===+=+=--::-:-=+*+-+#%#*###@@%##--=+**+***-:--------=+++***++++===--+%###</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="347.48" clip-path="url(#typing-29)" xml:space="preserve">*###**++*+=---::  -=+==#@*=:=++*++=+@@@##=-=*++**++-:==----------:--:-::.:---#@@##</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="354.62" clip-path="url(#typing-30)" xml:space="preserve">-=----===-.:.  :=+#%=--**==.-==++-=-%@@%#-:-*++**++=-=+==-=-=-----:::---:---+*##%%</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="361.77" clip-path="url(#typing-31)" xml:space="preserve">...-+==-....:-=+****+=-====-==+=-=-=%@@%#-.:+-==+=---==+==--=----=--:::::-==+%#%*#</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="368.93" clip-path="url(#typing-32)" xml:space="preserve">:-++#*=-==+***++*+*##*+*+*%#*=-:::--#%%@#-..::-===-:-=====----:-:----::::--=+###%%</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="376.08" clip-path="url(#typing-33)" xml:space="preserve">#%***+++#****+*#%*+***++**#@@%= -:-=##%%%-::.----..:-==++==+=----------::::-=+***%</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="383.23" clip-path="url(#typing-34)" xml:space="preserve">*+**++*++*##*##**+++*+++***%@@#-:.-=**#%@-.::::--: .-=====++=+-----===-:::--=-+#+*</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="390.38" clip-path="url(#typing-35)" xml:space="preserve">**#*#******#****++++++++#%%#%@#- ..-*###%=::::.  -:.:-=================------=###*</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="397.53" clip-path="url(#typing-36)" xml:space="preserve">%%***+*###%@***#*++**++#####*##=.. .=*#%@%:::---.:::.:----==----===-====--:--=+***</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="404.68" clip-path="url(#typing-37)" xml:space="preserve">*+==*+=##*%#***##*#++*#%%%#%%*--.   :+#%@@%:--:--:-:: ::.:::-----==-==-=---=-++#@@</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="411.82" clip-path="url(#typing-38)" xml:space="preserve">%*==++=++*=+=+++***++###%%%%#+-.     .*#@@@%-::-:.-=-:--...:::--==:----::.:=+#@%##</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="418.98" clip-path="url(#typing-39)" xml:space="preserve">##*++#+=*#+*+++==+*#**#%%%%%*-...     :#%@@@#:-..-=: --::-:..:-==-==-:-=+++%@@%%##</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="426.12" clip-path="url(#typing-40)" xml:space="preserve">@%*+===*+####+=++*#%@%%@%@#=:.... . . .*%@@@@-.-=:.:==: .-:.:==:-:-==--+#%@%%%%%%%</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="433.28" clip-path="url(#typing-41)" xml:space="preserve">*=--++=#*#+=***##+#%@%@@#+:.::...      .+**+=:-+==:-++::--::-===+::-=+#%%%%%%%%%%%</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="440.43" clip-path="url(#typing-42)" xml:space="preserve">+---==-=*+##%++*%##%@@#+-:..:.:::  .  :  .::-=-+**==*-.::---===+*=-+#%###%%%%%%%##</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="447.57" clip-path="url(#typing-43)" xml:space="preserve">++=++*###+*##+++#@@%#-:.:::.:.:::  ...:::---+*+-=+=+#=-*:.=+=++-=*%@@%%####%######</text>
+<text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="454.73" clip-path="url(#typing-44)" xml:space="preserve">##*%*#%*+=+*%%*%#++--::::::....::.   ..:=-.:==:-+=:*%*==-...-*+*%%%%%%%%%#**######</text>
   </text>
 </g>
 
