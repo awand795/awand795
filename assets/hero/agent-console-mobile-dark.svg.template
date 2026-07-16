@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="780" viewBox="0 0 480 780" role="img" aria-labelledby="title description">
+<title id="title">AWANDA - Backend Developer</title>
+<desc id="description">An animated mobile terminal console with system info and profile links.</desc>
+<defs>
+  <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#020617"/><stop offset="1" stop-color="#11152F"/></linearGradient>
+  <linearGradient id="border" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7C3AED"/><stop offset="0.48" stop-color="#22D3EE"/><stop offset="1" stop-color="#10B981"/></linearGradient>
+  <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22D3EE" stop-opacity="0"/><stop offset="0.5" stop-color="#22D3EE" stop-opacity="0.36"/><stop offset="1" stop-color="#7C3AED" stop-opacity="0"/></linearGradient>
+  <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#22D3EE" opacity="0.04"/></pattern>
+  <!-- Tech icon definitions -->
+  <g id="icon-nodejs-m"><circle cx="12" cy="12" r="11.5" fill="#0D1B2E" fill-opacity="0.9" stroke="#339933" stroke-width="1.2" stroke-opacity="0.85"/><polygon points="12,3 19,7 19,17 12,21 5,17 5,7" fill="none" stroke="#339933" stroke-width="1.2"/><circle cx="12" cy="12" r="2.5" fill="#339933" fill-opacity="0.7"/></g>
+  <g id="icon-react-m"><circle cx="12" cy="12" r="11.5" fill="#0D1B2E" fill-opacity="0.9" stroke="#61DAFB" stroke-width="1.2" stroke-opacity="0.85"/><ellipse cx="12" cy="12" rx="5.5" ry="6" fill="none" stroke="#61DAFB" stroke-width="1"/><ellipse cx="12" cy="12" rx="5.5" ry="6" fill="none" stroke="#61DAFB" stroke-width="1" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="5.5" ry="6" fill="none" stroke="#61DAFB" stroke-width="1" transform="rotate(120 12 12)"/><circle cx="12" cy="12" r="2" fill="#61DAFB"/></g>
+  <g id="icon-js-m"><circle cx="12" cy="12" r="11.5" fill="#0D1B2E" fill-opacity="0.9" stroke="#F7DF1E" stroke-width="1.2" stroke-opacity="0.85"/><rect x="4" y="4" width="16" height="16" rx="3" fill="none" stroke="#F7DF1E" stroke-width="1.2"/><path d="M 8 17 L 8 9.5 M 8 9.5 L 10 9.5 M 8 13 L 10 13 M 13 17 L 13 7.5 M 13 7.5 L 16 7.5 M 13 13 L 16 13" fill="none" stroke="#F7DF1E" stroke-width="1" stroke-linecap="round"/></g>
+  <g id="icon-git-m"><circle cx="12" cy="12" r="11.5" fill="#0D1B2E" fill-opacity="0.9" stroke="#F05032" stroke-width="1.2" stroke-opacity="0.85"/><circle cx="8" cy="6" r="2" fill="none" stroke="#F05032" stroke-width="1"/><circle cx="8" cy="18" r="2" fill="none" stroke="#F05032" stroke-width="1"/><circle cx="17" cy="12" r="2" fill="none" stroke="#F05032" stroke-width="1"/><line x1="8" y1="8" x2="8" y2="16" stroke="#F05032" stroke-width="1"/><line x1="8" y1="16" x2="15" y2="13" stroke="#F05032" stroke-width="1"/><line x1="8" y1="8" x2="15" y2="11" stroke="#F05032" stroke-width="1"/></g>
+  <g id="icon-mongodb-m"><circle cx="12" cy="12" r="11.5" fill="#0D1B2E" fill-opacity="0.9" stroke="#47A248" stroke-width="1.2" stroke-opacity="0.85"/><path d="M 12 2 Q 16 8 14.5 18 Q 13.5 12 12 2 Z" fill="none" stroke="#47A248" stroke-width="1.2" stroke-linejoin="round"/><path d="M 12 2 Q 8 8 9.5 18 Q 10.5 12 12 2 Z" fill="none" stroke="#47A248" stroke-width="1.2" stroke-linejoin="round"/></g>
+
+  <style>
+    .mono { font-family: 'Courier New', Consolas, monospace; }
+    .terminal-label { font-family: 'Courier New', Consolas, monospace; font-size: 12px; letter-spacing: 0.5px; fill: #64748B; }
+    .live-label { font-family: 'Courier New', Consolas, monospace; font-size: 10px; letter-spacing: 1px; fill: #F87171; }
+    .system-head { font-family: 'Courier New', Consolas, monospace; font-size: 15px; font-weight: 700; }
+    .system-section { font-family: 'Courier New', Consolas, monospace; font-size: 13px; font-weight: 700; }
+    .system-row { font-family: 'Courier New', Consolas, monospace; font-size: 13px; }
+    text, tspan { white-space: pre; }
+  </style>
+</defs>
+
+<rect width="480" height="780" rx="16" fill="url(#background)"/>
+<rect width="480" height="780" rx="16" fill="url(#scanlines)"/>
+
+<!-- Title Bar -->
+<rect x="3" y="3" width="474" height="34" rx="16" fill="#07111F" fill-opacity="0.84"/>
+<circle cx="20" cy="20" r="4.5" fill="#EF4444"/>
+<circle cx="36" cy="20" r="4.5" fill="#F59E0B"/>
+<circle cx="52" cy="20" r="4.5" fill="#10B981"/>
+<text x="240" y="25" text-anchor="middle" class="terminal-label">awand795@dev ~ % ./profile</text>
+
+<!-- Mobile Profile Card -->
+<rect x="10" y="50" width="460" height="710" rx="12" fill="#07111F" fill-opacity="0.4" stroke="url(#border)" stroke-opacity="0.4"/>
+
+<!-- Avatar Area -->
+<rect x="40" y="68" width="400" height="160" rx="10" fill="#0D1B2E" stroke="#22D3EE" stroke-opacity="0.2" stroke-width="1"/>
+<text x="240" y="100" text-anchor="middle" class="mono" font-size="16" font-weight="700" fill="#22D3EE">AWANDA</text>
+<text x="240" y="124" text-anchor="middle" class="mono" font-size="11" fill="#64748B">Backend Developer</text>
+<text x="240" y="146" text-anchor="middle" class="mono" font-size="10" fill="#64748B">Sumatera Utara, Indonesia</text>
+
+<!-- Decorative line -->
+<line x1="80" y1="162" x2="400" y2="162" stroke="#7C3AED" stroke-opacity="0.4" stroke-width="1"/>
+<text x="240" y="178" text-anchor="middle" class="mono" font-size="9" fill="#38BDF8">Learn, build, repeat</text>
+
+<circle cx="240" cy="200" r="4" fill="#10B981" opacity="0.6">
+  <animate attributeName="r" values="3;6;3" dur="2s" repeatCount="indefinite"/>
+</circle>
+
+<!-- Floating Tech Icons (mobile) -->
+<g opacity="0.85">
+  <g><animateTransform attributeName="transform" type="translate" values="0,0; 0,-4; 0,0" dur="3.5s" begin="0s" repeatCount="indefinite"/><use href="#icon-nodejs-m" x="60" y="202"/></g>
+  <g><animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 1,0" dur="4.0s" begin="0.5s" repeatCount="indefinite"/><use href="#icon-react-m" x="155" y="200"/></g>
+  <g><animateTransform attributeName="transform" type="translate" values="0,0; 0,-3; 0,0" dur="3.2s" begin="1.0s" repeatCount="indefinite"/><use href="#icon-js-m" x="258" y="202"/></g>
+  <g><animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; -1,0" dur="4.5s" begin="0.3s" repeatCount="indefinite"/><use href="#icon-git-m" x="355" y="200"/></g>
+  <g><animateTransform attributeName="transform" type="translate" values="0,0; 1,-4; 0,0" dur="3.8s" begin="0.8s" repeatCount="indefinite"/><use href="#icon-mongodb-m" x="105" y="218"/></g>
+</g>
+
+<!-- System Info Section -->
+<text x="50" y="250" class="system-section" fill="#10B981">- SYSTEM.INFO -</text>
+<line x1="50" y1="256" x2="430" y2="256" stroke="#10B981" stroke-opacity="0.2" stroke-width="0.5"/>
+
+<text x="50" y="278" class="system-row"><tspan fill="#64748B">. </tspan><tspan fill="#22D3EE" font-weight="700">Subject</tspan><tspan fill="#64748B">: .. </tspan><tspan fill="#E5E7EB">AWANDA</tspan></text>
+<text x="50" y="298" class="system-row"><tspan fill="#64748B">. </tspan><tspan fill="#22D3EE" font-weight="700">Role</tspan><tspan fill="#64748B">: .... </tspan><tspan fill="#E5E7EB">Backend Developer</tspan></text>
+<text x="50" y="318" class="system-row"><tspan fill="#64748B">. </tspan><tspan fill="#22D3EE" font-weight="700">Location</tspan><tspan fill="#64748B">: </tspan><tspan fill="#E5E7EB">Sumatera Utara, Indonesia</tspan></text>
+<text x="50" y="338" class="system-row"><tspan fill="#64748B">. </tspan><tspan fill="#22D3EE" font-weight="700">Status</tspan><tspan fill="#64748B">: .. </tspan><tspan fill="#E5E7EB">Learning / Building / Shipping</tspan></text>
+
+<!-- Tech Stack Section -->
+<text x="50" y="370" class="system-section" fill="#10B981">- TECH.STACK -</text>
+<line x1="50" y1="376" x2="430" y2="376" stroke="#10B981" stroke-opacity="0.2" stroke-width="0.5"/>
+
+<text x="50" y="398" class="system-row"><tspan fill="#64748B">. </tspan><tspan fill="#22D3EE" font-weight="700">Runtime</tspan><tspan fill="#64748B">: </tspan><tspan fill="#E5E7EB">Node.js | Express.js</tspan></text>
+<text x="50" y="418" class="system-row"><tspan fill="#64748B">. </tspan><tspan fill="#22D3EE" font-weight="700">Languages</tspan><tspan fill="#64748B">: </tspan><tspan fill="#E5E7EB">JavaScript | Java | PHP</tspan></text>
+<text x="50" y="438" class="system-row"><tspan fill="#64748B">. </tspan><tspan fill="#22D3EE" font-weight="700">Databases</tspan><tspan fill="#64748B">: </tspan><tspan fill="#E5E7EB">MongoDB | MySQL</tspan></text>
+
+<!-- Build Log Section -->
+<text x="50" y="470" class="system-section" fill="#10B981">- BUILD.LOG -</text>
+<line x1="50" y1="476" x2="430" y2="476" stroke="#10B981" stroke-opacity="0.2" stroke-width="0.5"/>
+
+<text x="50" y="498" class="system-row"><tspan fill="#64748B">. </tspan><tspan fill="#22D3EE" font-weight="700">Portfolio</tspan><tspan fill="#64748B">: </tspan><tspan fill="#E5E7EB">WEB-PORTFOLIO-FIXINGPROJECT</tspan></text>
+<text x="50" y="518" class="system-row"><tspan fill="#64748B">. </tspan><tspan fill="#22D3EE" font-weight="700">Website</tspan><tspan fill="#64748B">: .. </tspan><tspan fill="#38BDF8">awanda.eu.org</tspan></text>
+<text x="50" y="538" class="system-row"><tspan fill="#64748B">. </tspan><tspan fill="#22D3EE" font-weight="700">Stack</tspan><tspan fill="#64748B">: .... </tspan><tspan fill="#E5E7EB">React | HTML5 | CSS3</tspan></text>
+<text x="50" y="558" class="system-row"><tspan fill="#64748B">. </tspan><tspan fill="#22D3EE" font-weight="700">Tools</tspan><tspan fill="#64748B">: .... </tspan><tspan fill="#E5E7EB">Git | VS Code | Postman</tspan></text>
+
+<!-- Links Section -->
+<text x="50" y="590" class="system-section" fill="#10B981">- LINKS -</text>
+<line x1="50" y1="596" x2="430" y2="596" stroke="#10B981" stroke-opacity="0.2" stroke-width="0.5"/>
+
+<text x="50" y="618" class="system-row"><tspan fill="#64748B">. </tspan><tspan fill="#22D3EE" font-weight="700">GitHub</tspan><tspan fill="#64748B">: .. </tspan><a target="_blank" href="https://github.com/awand795"><tspan fill="#E5E7EB" text-decoration="underline">@awand795 ↗</tspan></a></text>
+<text x="50" y="638" class="system-row"><tspan fill="#64748B">. </tspan><tspan fill="#22D3EE" font-weight="700">LinkedIn</tspan><tspan fill="#64748B">: . </tspan><a target="_blank" href="https://linkedin.com/in/awanda"><tspan fill="#E5E7EB" text-decoration="underline">@awanda ↗</tspan></a></text>
+<text x="50" y="658" class="system-row"><tspan fill="#64748B">. </tspan><tspan fill="#22D3EE" font-weight="700">Instagram</tspan><tspan fill="#64748B">: </tspan><a target="_blank" href="https://instagram.com/adnawaa"><tspan fill="#E5E7EB" text-decoration="underline">@adnawaa ↗</tspan></a></text>
+<text x="50" y="678" class="system-row"><tspan fill="#64748B">. </tspan><tspan fill="#22D3EE" font-weight="700">Website</tspan><tspan fill="#64748B">: </tspan><a target="_blank" href="https://awanda.eu.org"><tspan fill="#38BDF8" text-decoration="underline">awanda.eu.org ↗</tspan></a></text>
+
+<!-- Signature -->
+<text x="240" y="710" text-anchor="middle" class="mono" font-size="8" fill="#64748B" letter-spacing="1">BACKEND ENGINEER • {{ REPOS }} REPOS</text>
+<text x="240" y="728" text-anchor="middle" class="mono" font-size="8" fill="#64748B" letter-spacing="1">{{ FOLLOWERS }} FOLLOWERS • {{ LAST_SYNC }}</text>
+
+<!-- Scan line -->
+<rect x="0" y="-80" width="480" height="80" fill="url(#scan)" opacity="0.5" style="mix-blend-mode:screen">
+  <animateTransform attributeName="transform" type="translate" from="0 -80" to="0 860" dur="4.5s" repeatCount="indefinite"/>
+</rect>
+
+<!-- Animated border -->
+<rect x="3" y="3" width="474" height="774" rx="14" fill="none" stroke="url(#border)" stroke-width="1.5" opacity="0.7">
+  <animate attributeName="opacity" values="0.4;0.85;0.4" dur="3.4s" repeatCount="indefinite"/>
+</rect>
+</svg>

@@ -12,6 +12,12 @@ Thumbs.db
 *.swp
 *.swo
 
+# Intermediate file from strip_svg_animations.py (cleaned up in CI)
+assets/hero/agent-console-static.svg
+
 # Temporary files
 *.tmp
 *.log
+
+# Local tool config
+.freebuff/

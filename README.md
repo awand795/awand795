@@ -1,13 +1,12 @@
-<div align="center">
-
-# 👋 Hi there, I'm AWANDA!
-
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=2ea44f&center=true&vCenter=true&width=435&lines=Backend+Developer;Node.js+Enthusiast;Full-Stack+Learner;Problem+Solver" alt="Typing SVG" />
-
-[![Location](https://img.shields.io/badge/Location-Sumatera%20Utara%2C%20Indonesia-25B976?style=for-the-badge&logo=google-maps)](https://www.google.com/maps/place/Sumatera+Utara)
-[![Website](https://img.shields.io/badge/Website-awanda.eu.org-2ea44f?style=for-the-badge&logo=google-chrome)](https://awanda.eu.org)
-
-</div>
+<p align="center">
+<picture>
+<source media="(max-width: 760px) and (prefers-color-scheme: dark)" srcset="./assets/hero/agent-console-mobile-dark.svg">
+<source media="(max-width: 760px)" srcset="./assets/hero/agent-console-mobile-light.svg">
+<source media="(prefers-color-scheme: dark)" srcset="./assets/hero/agent-console-dark.svg">
+<source media="(prefers-color-scheme: light)" srcset="./assets/hero/agent-console-light.svg">
+<img src="./assets/hero/agent-console.png" alt="AWANDA - Backend Developer" width="100%">
+</picture>
+</p>
 
 ---
 
