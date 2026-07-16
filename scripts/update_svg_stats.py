@@ -7,10 +7,11 @@ in the SVG console card template files (*.svg.template) with real data,
 outputting production-ready SVG files (*.svg).
 
 Tokens:
-  {{ REPOS }}         -> total public repositories
-  {{ FOLLOWERS }}     -> total followers
-  {{ ACTIVE_STATUS }} -> "ACTIVE • Xh ago" or "ACTIVE" based on last activity
-  {{ LAST_SYNC }}     -> human-readable timestamp of this update
+  {{ REPOS }}          -> total public repositories
+  {{ FOLLOWERS }}      -> total followers
+  {{ ACTIVE_STATUS }}  -> "ACTIVE • Xh ago" or "ACTIVE" based on last activity
+  {{ LAST_SYNC }}      -> human-readable timestamp of this update
+  {{ ASCII_PORTRAIT }} -> ASCII art generated from GitHub avatar
 
 Design note:
   Template files (*.svg.template) are committed to the repo and always
@@ -18,12 +19,19 @@ Design note:
   fresh every run, so stats never go stale.
 """
 
+import io
 import json
 import os
 import sys
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone
+
+try:
+    from PIL import Image
+    HAS_PIL = True
+except ImportError:
+    HAS_PIL = False
 
 # ── Config ──────────────────────────────────────────────────────────────
 GITHUB_USER = "awand795"
@@ -63,11 +71,12 @@ def fetch_github_stats(username: str) -> dict:
     user_data = fetch_json(f"https://api.github.com/users/{username}")
 
     if not user_data:
-        return {"repos": DEFAULT_REPOS, "followers": DEFAULT_FOLLOWERS, "is_active": True}
+        return {"repos": DEFAULT_REPOS, "followers": DEFAULT_FOLLOWERS, "is_active": True, "avatar_url": None}
 
     repos = user_data.get("public_repos", DEFAULT_REPOS)
     followers = user_data.get("followers", DEFAULT_FOLLOWERS)
     updated_at_str = user_data.get("updated_at", "")
+    avatar_url = user_data.get("avatar_url")
 
     # Determine if user has been active recently (within 7 days)
     is_active = True
@@ -80,7 +89,7 @@ def fetch_github_stats(username: str) -> dict:
         except (ValueError, TypeError):
             pass
 
-    return {"repos": repos, "followers": followers, "is_active": is_active}
+    return {"repos": repos, "followers": followers, "is_active": is_active, "avatar_url": avatar_url}
 
 
 def fetch_last_push(username: str):
@@ -91,6 +100,56 @@ def fetch_last_push(username: str):
         if created_at:
             return created_at
     return None
+
+
+def fetch_ascii_portrait(avatar_url: str | None, width: int = 82, max_rows: int = 55) -> str:
+    """Download the GitHub avatar and convert it to an ASCII art SVG text block."""
+    if not HAS_PIL or not avatar_url:
+        print("  [!] Pillow not available or no avatar URL — using fallback portrait")
+        return ""
+
+    try:
+        # Download avatar at a reasonable size
+        req = urllib.request.Request(
+            f"{avatar_url}&s={width * 2}",
+            headers={"User-Agent": f"{GITHUB_USER}-svg-updater/1.0"},
+        )
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            img_data = resp.read()
+
+        img = Image.open(io.BytesIO(img_data))
+
+        # Resize to ASCII grid dimensions
+        aspect = img.size[1] / img.size[0]
+        chars_tall = min(int(width * aspect * 0.45), max_rows)
+        img_small = img.resize((width, chars_tall))
+        gray = img_small.convert("L")
+        pixels = list(gray.getdata())
+
+        # ASCII gradient: dark -> light
+        ascii_chars = "@%#*+=-:. "
+
+        # Build SVG tspan elements
+        lines = []
+        start_y = 90.00
+        line_height = 6.65
+
+        for y in range(chars_tall):
+            row = ""
+            for x in range(width):
+                pixel = pixels[y * width + x]
+                idx = int(pixel / 255 * (len(ascii_chars) - 1))
+                idx = min(idx, len(ascii_chars) - 1)
+                row += ascii_chars[idx]
+            y_pos = start_y + y * line_height
+            lines.append(f'    <tspan x="48" y="{y_pos:.2f}" xml:space="preserve">{row}</tspan>')
+
+        print(f"  [+] Generated ASCII portrait: {width}x{chars_tall} chars")
+        return "\n".join(lines)
+
+    except Exception as e:
+        print(f"  [!] Failed to generate ASCII portrait: {e}", file=sys.stderr)
+        return ""
 
 
 def format_timestamp() -> str:
@@ -161,9 +220,9 @@ def main():
     # 1. Fetch live data
     stats = fetch_github_stats(GITHUB_USER)
     last_push = fetch_last_push(GITHUB_USER)
-
     repos = stats["repos"]
     followers = stats["followers"]
+    avatar_url = stats.get("avatar_url")
 
     # Determine active status
     if last_push:
@@ -177,10 +236,14 @@ def main():
     # Format last sync timestamp
     last_sync = format_timestamp()
 
+    # Generate ASCII portrait from avatar
+    ascii_portrait = fetch_ascii_portrait(avatar_url)
+
     print(f"\n  Repos:      {repos}")
     print(f"  Followers:  {followers}")
     print(f"  Status:     {active_status}")
-    print(f"  Last Sync:  {last_sync}\n")
+    print(f"  Last Sync:  {last_sync}")
+    print(f"  ASCII art:  {'Yes' if ascii_portrait else 'Fallback'}\n")
 
     # 2. Define token replacements
     tokens = {
@@ -188,6 +251,7 @@ def main():
         "{{ FOLLOWERS }}": str(followers),
         "{{ ACTIVE_STATUS }}": active_status,
         "{{ LAST_SYNC }}": last_sync,
+        "{{ ASCII_PORTRAIT }}": ascii_portrait,
     }
 
     # 3. Generate SVGs from templates

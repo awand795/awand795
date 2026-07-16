@@ -37,6 +37,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install Python dependencies
+        run: pip install Pillow
+
       - name: Fetch GitHub stats & generate SVG files
         run: python scripts/update_svg_stats.py
 
