@@ -1,9 +1,9 @@
 <p align="center">
 <picture>
-<source media="(max-width: 760px) and (prefers-color-scheme: dark)" srcset="./assets/hero/agent-console-mobile-dark.svg">
-<source media="(max-width: 760px)" srcset="./assets/hero/agent-console-mobile-light.svg">
-<source media="(prefers-color-scheme: dark)" srcset="./assets/hero/agent-console-dark.svg">
-<source media="(prefers-color-scheme: light)" srcset="./assets/hero/agent-console-light.svg">
+<source media="(max-width: 760px) and (prefers-color-scheme: dark)" srcset="./assets/hero/agent-console-mobile-dark.svg?v=2">
+<source media="(max-width: 760px)" srcset="./assets/hero/agent-console-mobile-light.svg?v=2">
+<source media="(prefers-color-scheme: dark)" srcset="./assets/hero/agent-console-dark.svg?v=2">
+<source media="(prefers-color-scheme: light)" srcset="./assets/hero/agent-console-light.svg?v=2">
 <img src="./assets/hero/agent-console.png" alt="AWANDA - Backend Developer" width="100%">
 </picture>
 </p>
