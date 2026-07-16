@@ -213,16 +213,23 @@ def _remove_background(img: Image.Image, margin: float = 0.10) -> Image.Image:
     return cropped
 
 
-def fetch_ascii_portrait(avatar_url: str | None, width: int = 82, max_rows: int = 60) -> str:
+def fetch_ascii_portrait(avatar_url: str | None, width: int = 82, max_rows: int = 60) -> tuple[str, str]:
     """Download the GitHub avatar and convert it to an ASCII art SVG text block.
 
+    Returns (tspan_lines, typing_clip_paths):
+      - tspan_lines:  SVG <tspan> elements wrapped in per-line <g clip-path="..."> groups
+                      for the typing animation effect.
+      - typing_clip_paths: SVG <clipPath> definitions that reveal each line
+                           left-to-right with staggered timing.
+
     Auto-crops the background, applies contrast stretch, and inverts for
-    dark-background SVG rendering. The output SVG <tspan> elements are
-    pre-positioned to center the portrait within the 470×438 panel.
+    dark-background SVG rendering. Each line's clip path animates width
+    from 0 → full text width over 0.25s, staggered 0.07s per line,
+    starting 0.3s after the SVG loads.
     """
     if not HAS_PIL or not avatar_url:
         print("  [!] Pillow not available or no avatar URL — using fallback portrait")
-        return ""
+        return "", ""
 
     try:
         # Download avatar (2x ASCII width for good source resolution)
@@ -279,6 +286,15 @@ def fetch_ascii_portrait(avatar_url: str | None, width: int = 82, max_rows: int 
         # Build SVG tspan elements
         n_chars = len(ascii_chars)
         lines = []
+        clip_paths = []
+
+        # Typing animation timing
+        # Each line reveals left-to-right over 0.25s, staggered 0.07s apart
+        # Animation starts 0.3s after SVG loads
+        typing_duration = 0.25
+        typing_stagger = 0.08
+        typing_delay_start = 0.30
+        reveal_width = text_width + 15  # slightly wider than text to avoid clipping last char
 
         for y in range(chars_tall):
             row_chars = []
@@ -290,14 +306,37 @@ def fetch_ascii_portrait(avatar_url: str | None, width: int = 82, max_rows: int 
                 row_chars.append(ascii_chars[idx])
             row = "".join(row_chars)
             y_pos = start_y + y * line_height
-            lines.append(f'    <tspan x="{start_x:.1f}" y="{y_pos:.2f}" xml:space="preserve">{row}</tspan>')
+            delay = typing_delay_start + y * typing_stagger
 
+            # Per-line clip path for typing effect
+            clip_paths.append(
+                f'  <clipPath id="typing-{y}">'
+                f'<rect x="{start_x:.1f}" y="{y_pos:.2f}" width="0" height="{line_height}">'
+                f'<animate attributeName="width" from="0" to="{reveal_width:.0f}" '
+                f'dur="{typing_duration}s" begin="{delay:.2f}s" fill="freeze" '
+                f'calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/>'
+                f'</rect></clipPath>'
+            )
+
+            # Use separate <text> element per line with clip-path attribute
+            # This is SVG 1.1 compliant (unlike <g> inside <text> which librsvg drops)
+            lines.append(
+                f'<text class="ascii" x="{start_x:.1f}" y="{y_pos:.2f}" '
+                f'clip-path="url(#typing-{y})" xml:space="preserve">{row}</text>'
+            )
+
+        tspan_output = "\n".join(lines)
+        clip_output = "\n".join(clip_paths)
+
+        total_anim = typing_delay_start + (chars_tall - 1) * typing_stagger + typing_duration
         print(f"  [+] Generated ASCII portrait: {width}x{chars_tall} chars (centered at x={start_x:.0f}, y={start_y:.0f})")
-        return "\n".join(lines)
+        print(f"  [+] Typing animation: {chars_tall} lines, {typing_duration}s each, "
+              f"stagger {typing_stagger}s, total ~{total_anim:.1f}s")
+        return tspan_output, clip_output
 
     except Exception as e:
         print(f"  [!] Failed to generate ASCII portrait: {e}", file=sys.stderr)
-        return ""
+        return "", ""
 
 
 def format_timestamp() -> str:
@@ -385,7 +424,7 @@ def main():
     last_sync = format_timestamp()
 
     # Generate ASCII portrait from avatar
-    ascii_portrait = fetch_ascii_portrait(avatar_url)
+    ascii_portrait, typing_clip_paths = fetch_ascii_portrait(avatar_url)
 
     print(f"\n  Repos:      {repos}")
     print(f"  Followers:  {followers}")
@@ -400,6 +439,7 @@ def main():
         "{{ ACTIVE_STATUS }}": active_status,
         "{{ LAST_SYNC }}": last_sync,
         "{{ ASCII_PORTRAIT }}": ascii_portrait,
+        "{{ TYPING_CLIP_PATHS }}": typing_clip_paths,
     }
 
     # 3. Generate SVGs from templates

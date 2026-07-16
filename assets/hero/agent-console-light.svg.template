@@ -10,7 +10,7 @@
   <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#059669" opacity="0.035"/></pattern>
   <pattern id="portrait-grid" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M 44 0 H 0 V 44" fill="none" stroke="#334155" stroke-width="0.65" opacity="0.06"/><circle cx="0" cy="0" r="1.2" fill="#059669" opacity="0.1"/></pattern>
   <clipPath id="portrait-clip"><rect x="24" y="82" width="470" height="438" rx="12"/></clipPath>
-  <mask id="portrait-reveal"><rect x="24" y="82" width="470" height="0" rx="12" fill="white"><animate attributeName="height" from="0" to="438" dur="2.1s" begin="0.12s" fill="freeze"/></rect></mask>
+  {{ TYPING_CLIP_PATHS }}
 
   
   <clipPath id="sys-0"><rect x="525" y="66.0" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="0.68s" fill="freeze"/></rect></clipPath>
@@ -190,7 +190,7 @@
 </g>
 
 <!-- ASCII Art Portrait (generated from GitHub avatar) -->
-<g clip-path="url(#portrait-clip)" mask="url(#portrait-reveal)">
+<g clip-path="url(#portrait-clip)">
   <text class="ascii" font-family="'Courier New', Consolas, monospace" font-size="6.5px" letter-spacing="-0.15px">
 {{ ASCII_PORTRAIT }}
   </text>
