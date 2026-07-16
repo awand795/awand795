@@ -7,11 +7,10 @@ in the SVG console card template files (*.svg.template) with real data,
 outputting production-ready SVG files (*.svg).
 
 Tokens:
-  {{ REPOS }}          -> total public repositories
-  {{ FOLLOWERS }}      -> total followers
-  {{ ACTIVE_STATUS }}  -> "ACTIVE • Xh ago" or "ACTIVE" based on last activity
-  {{ LAST_SYNC }}      -> human-readable timestamp of this update
-  {{ AVATAR_DATA_URI }} -> base64 data URI of the GitHub profile avatar
+  {{ REPOS }}         -> total public repositories
+  {{ FOLLOWERS }}     -> total followers
+  {{ ACTIVE_STATUS }} -> "ACTIVE • Xh ago" or "ACTIVE" based on last activity
+  {{ LAST_SYNC }}     -> human-readable timestamp of this update
 
 Design note:
   Template files (*.svg.template) are committed to the repo and always
@@ -19,7 +18,6 @@ Design note:
   fresh every run, so stats never go stale.
 """
 
-import base64
 import json
 import os
 import sys
@@ -45,10 +43,6 @@ OUTPUT_FILES = [f.replace(".template", "") for f in TEMPLATE_FILES]
 DEFAULT_REPOS = "-"
 DEFAULT_FOLLOWERS = "-"
 
-# Avatar
-DEFAULT_AVATAR_DATA_URI = ""
-AVATAR_SIZE = 192  # Size of avatar image in the SVG (matches template: 192x192)
-
 
 # ── Helpers ─────────────────────────────────────────────────────────────
 
@@ -69,12 +63,11 @@ def fetch_github_stats(username: str) -> dict:
     user_data = fetch_json(f"https://api.github.com/users/{username}")
 
     if not user_data:
-        return {"repos": DEFAULT_REPOS, "followers": DEFAULT_FOLLOWERS, "is_active": True, "avatar_url": None}
+        return {"repos": DEFAULT_REPOS, "followers": DEFAULT_FOLLOWERS, "is_active": True}
 
     repos = user_data.get("public_repos", DEFAULT_REPOS)
     followers = user_data.get("followers", DEFAULT_FOLLOWERS)
     updated_at_str = user_data.get("updated_at", "")
-    avatar_url = user_data.get("avatar_url", None)
 
     # Determine if user has been active recently (within 7 days)
     is_active = True
@@ -87,7 +80,7 @@ def fetch_github_stats(username: str) -> dict:
         except (ValueError, TypeError):
             pass
 
-    return {"repos": repos, "followers": followers, "is_active": is_active, "avatar_url": avatar_url}
+    return {"repos": repos, "followers": followers, "is_active": is_active}
 
 
 def fetch_last_push(username: str):
@@ -98,41 +91,6 @@ def fetch_last_push(username: str):
         if created_at:
             return created_at
     return None
-
-
-def fetch_avatar_data_uri(avatar_url: str | None, size: int = AVATAR_SIZE) -> str:
-    """Download the avatar image and return a base64 data URI."""
-    if not avatar_url:
-        print("  [!] No avatar URL available, skipping avatar download")
-        return DEFAULT_AVATAR_DATA_URI
-
-    # Append size parameter
-    if "?" in avatar_url:
-        avatar_url = f"{avatar_url}&s={size}"
-    else:
-        avatar_url = f"{avatar_url}?s={size}"
-
-    try:
-        req = urllib.request.Request(avatar_url, headers={"User-Agent": f"{GITHUB_USER}-svg-updater/1.0"})
-        print(f"  Downloading avatar ({size}x{size}) ...")
-        with urllib.request.urlopen(req, timeout=20) as resp:
-            img_data = resp.read()
-
-        # Detect MIME type from Content-Type header
-        content_type = resp.headers.get("Content-Type", "image/jpeg")
-        if content_type.startswith("image/"):
-            mime = content_type
-        else:
-            mime = "image/jpeg"  # fallback
-
-        b64 = base64.b64encode(img_data).decode("ascii")
-        data_uri = f"data:{mime};base64,{b64}"
-        size_kb = len(data_uri) / 1024
-        print(f"  [+] Avatar encoded: {size_kb:.1f} KB")
-        return data_uri
-    except (urllib.error.URLError, urllib.error.HTTPError, OSError) as e:
-        print(f"  [!] Failed to download avatar: {e}", file=sys.stderr)
-        return DEFAULT_AVATAR_DATA_URI
 
 
 def format_timestamp() -> str:
@@ -194,9 +152,8 @@ def generate_svg_from_template(template_path: str, output_path: str, tokens: dic
 def main():
     banner = """
   +------------------------------------------------------+
-  |        awand795 SVG Stats Updater v1.1               |
+  |        awand795 SVG Stats Updater v1.0               |
   |        Template-based auto-updater                   |
-  |        Now with avatar embedding!                    |
   +------------------------------------------------------+
 """
     print(banner)
@@ -207,7 +164,6 @@ def main():
 
     repos = stats["repos"]
     followers = stats["followers"]
-    avatar_url = stats.get("avatar_url")
 
     # Determine active status
     if last_push:
@@ -218,29 +174,23 @@ def main():
     else:
         active_status = "IDLE"
 
-    # 2. Fetch & encode avatar
-    avatar_data_uri = fetch_avatar_data_uri(avatar_url)
-
     # Format last sync timestamp
     last_sync = format_timestamp()
 
-    print(f"\n  Repos:           {repos}")
-    print(f"  Followers:       {followers}")
-    print(f"  Status:          {active_status}")
-    ok = "[OK]" if avatar_data_uri else "[FAIL]"
-    print(f"  Avatar embedded: {ok}")
-    print(f"  Last Sync:       {last_sync}\n")
+    print(f"\n  Repos:      {repos}")
+    print(f"  Followers:  {followers}")
+    print(f"  Status:     {active_status}")
+    print(f"  Last Sync:  {last_sync}\n")
 
-    # 3. Define token replacements
+    # 2. Define token replacements
     tokens = {
         "{{ REPOS }}": str(repos),
         "{{ FOLLOWERS }}": str(followers),
         "{{ ACTIVE_STATUS }}": active_status,
         "{{ LAST_SYNC }}": last_sync,
-        "{{ AVATAR_DATA_URI }}": avatar_data_uri,
     }
 
-    # 4. Generate SVGs from templates
+    # 3. Generate SVGs from templates
     svg_dir = SVG_DIR
     if not os.path.isdir(svg_dir):
         print(f"  [!] SVG directory not found: {svg_dir}", file=sys.stderr)
@@ -258,11 +208,7 @@ def main():
     # Print token summary for debugging
     print("  Token map:")
     for k, v in tokens.items():
-        if k == "{{ AVATAR_DATA_URI }}":
-            preview = v[:60] + "..." if len(v) > 60 else v
-            print(f"    {k:25s} -> {preview}")
-        else:
-            print(f"    {k:25s} -> {v}")
+        print(f"    {k:25s} -> {v}")
     print()
 
 
