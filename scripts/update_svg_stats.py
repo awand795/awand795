@@ -25,7 +25,12 @@ import os
 import sys
 import urllib.request
 import urllib.error
+import warnings
 from datetime import datetime, timezone
+
+# Suppress Pillow getdata() deprecation warning — still needed for Pillow <14
+warnings.filterwarnings("ignore", message=".*getdata.*deprecated.*")
+
 
 try:
     from PIL import Image
@@ -102,49 +107,192 @@ def fetch_last_push(username: str):
     return None
 
 
-def fetch_ascii_portrait(avatar_url: str | None, width: int = 82, max_rows: int = 55) -> str:
-    """Download the GitHub avatar and convert it to an ASCII art SVG text block."""
+def _remove_background(img: Image.Image, margin: float = 0.10) -> Image.Image:
+    """
+    Auto-detect and crop away the background of a GitHub avatar.
+
+    Strategy:
+      1. Downscale to a 40×40 thumbnail for fast pixel analysis.
+      2. Sample edge pixels (corners + mid-edges) to estimate background color.
+      3. Mark any pixel whose RGB Euclidean distance from the background
+         estimate exceeds a threshold as "foreground".
+      4. Find the bounding box of foreground pixels.
+      5. Crop the original image with a small margin around the subject.
+
+    Falls back to the full image if the result would be empty or tiny,
+    or if the avatar is already tightly cropped with no clear background.
+    """
+    # Downscale to a thumbnail for fast analysis
+    thumb = img.copy()
+    thumb.thumbnail((40, 40), Image.LANCZOS)
+    tw, th = thumb.size
+    if tw < 8 or th < 8:
+        print("  [-] Thumbnail too small — skipping background removal")
+        return img
+
+    # Sample background from 8 edge positions (corners + edge midpoints)
+    edge_samples = [
+        thumb.getpixel((0, 0)),
+        thumb.getpixel((tw - 1, 0)),
+        thumb.getpixel((0, th - 1)),
+        thumb.getpixel((tw - 1, th - 1)),
+        thumb.getpixel((tw // 2, 0)),
+        thumb.getpixel((tw // 2, th - 1)),
+        thumb.getpixel((0, th // 2)),
+        thumb.getpixel((tw - 1, th // 2)),
+    ]
+
+    # Compute median per channel (robust to outliers)
+    r_vals = sorted(p[0] for p in edge_samples)
+    g_vals = sorted(p[1] for p in edge_samples)
+    b_vals = sorted(p[2] for p in edge_samples)
+    mid = len(r_vals) // 2
+    bg_color = (r_vals[mid], g_vals[mid], b_vals[mid])
+
+    # Threshold: squared Euclidean distance
+    bg_r, bg_g, bg_b = bg_color
+    threshold_sq = 2000  # ~45 per-channel difference
+
+    # Build a binary mask from the thumbnail
+    pixels = list(thumb.getdata())  # Pillow <14 compat; must be get_flattened_data().tolist() for Pillow 14+
+    fg_mask = [
+        (r - bg_r) ** 2 + (g - bg_g) ** 2 + (b - bg_b) ** 2 > threshold_sq
+        for (r, g, b) in pixels
+    ]
+
+    # Find bounding box
+    fg_y = [
+        y for y in range(th)
+        if any(fg_mask[y * tw + x] for x in range(tw))
+    ]
+    fg_x = [
+        x for x in range(tw)
+        if any(fg_mask[y * tw + x] for y in range(th))
+    ]
+
+    if not fg_y or not fg_x:
+        print("  [-] No distinct background detected — using full image")
+        return img
+
+    y0, y1 = min(fg_y), max(fg_y)
+    x0, x1 = min(fg_x), max(fg_x)
+
+    # If the foreground fills most of the image, skip cropping
+    fg_area_ratio = (y1 - y0 + 1) * (x1 - x0 + 1) / (tw * th)
+    if fg_area_ratio > 0.85:
+        print(f"  [-] Subject fills {fg_area_ratio:.0%} of frame — no background to crop")
+        return img
+
+    # Add margin
+    margin_x = max(int((x1 - x0) * margin), 2)
+    margin_y = max(int((y1 - y0) * margin), 2)
+    y0 = max(0, y0 - margin_y)
+    y1 = min(th - 1, y1 + margin_y)
+    x0 = max(0, x0 - margin_x)
+    x1 = min(tw - 1, x1 + margin_x)
+
+    # Scale bounding box to original image coordinates
+    scale_x = img.size[0] / tw
+    scale_y = img.size[1] / th
+    crop_box = (
+        int(x0 * scale_x),
+        int(y0 * scale_y),
+        int((x1 + 1) * scale_x),
+        int((y1 + 1) * scale_y),
+    )
+
+    # Guard against degenerate crops
+    crop_w = crop_box[2] - crop_box[0]
+    crop_h = crop_box[3] - crop_box[1]
+    if crop_w < 10 or crop_h < 10:
+        print("  [-] Foreground crop too small — using full image")
+        return img
+
+    cropped = img.crop(crop_box)
+    print(f"  [+] Auto-cropped to subject: {cropped.size}")
+    return cropped
+
+
+def fetch_ascii_portrait(avatar_url: str | None, width: int = 82, max_rows: int = 60) -> str:
+    """Download the GitHub avatar and convert it to an ASCII art SVG text block.
+
+    Auto-crops the background, applies contrast stretch, and inverts for
+    dark-background SVG rendering. The output SVG <tspan> elements are
+    pre-positioned to center the portrait within the 470×438 panel.
+    """
     if not HAS_PIL or not avatar_url:
         print("  [!] Pillow not available or no avatar URL — using fallback portrait")
         return ""
 
     try:
-        # Download avatar at a reasonable size
+        # Download avatar (2x ASCII width for good source resolution)
         req = urllib.request.Request(
             f"{avatar_url}&s={width * 2}",
             headers={"User-Agent": f"{GITHUB_USER}-svg-updater/1.0"},
         )
         with urllib.request.urlopen(req, timeout=20) as resp:
-            img_data = resp.read()
+            img = Image.open(io.BytesIO(resp.read()))
 
-        img = Image.open(io.BytesIO(img_data))
+        # Auto-crop background — focus on the person
+        img = _remove_background(img)
 
-        # Resize to ASCII grid dimensions
-        aspect = img.size[1] / img.size[0]
-        chars_tall = min(int(width * aspect * 0.45), max_rows)
-        img_small = img.resize((width, chars_tall))
-        gray = img_small.convert("L")
-        pixels = list(gray.getdata())
-
-        # ASCII gradient: dark -> light
+        # Rich ASCII ramp: dense chars first (for dark bg, dense = more visible)
         ascii_chars = "@%#*+=-:. "
 
+        # Resize to ASCII grid
+        aspect = img.size[1] / img.size[0]
+        chars_tall = min(int(width * aspect * 0.55), max_rows)
+        img_small = img.resize((width, chars_tall), Image.LANCZOS)
+        img_gray = img_small.convert("L")
+        px_list = list(img_gray.getdata())  # Pillow <14 compat; must be get_flattened_data().tolist() for Pillow 14+
+
+        # Percentile-based contrast stretch (more robust than hard clip)
+        sorted_px = sorted(px_list)
+        n = len(sorted_px)
+        lo = sorted_px[int(n * 0.02)]   # 2nd percentile
+        hi = sorted_px[int(n * 0.98)]   # 98th percentile
+        span = hi - lo
+        if span > 20:  # only stretch if there's meaningful contrast to gain
+            px_list = [
+                max(0, min(255, int((v - lo) / span * 255))) for v in px_list
+            ]
+
+        # Calculate centering position within the 470×438 portrait panel
+        # Panel bounds: x=24..494, y=82..520
+        # Each ASCII char is ~3.75px wide at font-size 6.5px + letter-spacing -0.15px
+        char_width = 3.9   # approximate width of Courier New at 6.5px
+        line_height = 7.15
+
+        text_width = width * char_width
+        text_height = chars_tall * line_height
+
+        panel_x = 24       # portrait panel left edge
+        panel_y = 82       # portrait panel top edge
+        panel_w = 470      # portrait panel width
+        panel_h = 438      # portrait panel height
+
+        # Center horizontally
+        start_x = panel_x + (panel_w - text_width) / 2
+        # Center vertically
+        start_y = panel_y + (panel_h - text_height) / 2
+
         # Build SVG tspan elements
+        n_chars = len(ascii_chars)
         lines = []
-        start_y = 90.00
-        line_height = 6.65
 
         for y in range(chars_tall):
-            row = ""
+            row_chars = []
             for x in range(width):
-                pixel = pixels[y * width + x]
-                idx = int(pixel / 255 * (len(ascii_chars) - 1))
-                idx = min(idx, len(ascii_chars) - 1)
-                row += ascii_chars[idx]
+                pixel = px_list[y * width + x]
+                inv = 255 - pixel  # invert for dark background
+                idx = int(inv * (n_chars - 1) / 255)
+                idx = min(idx, n_chars - 1)
+                row_chars.append(ascii_chars[idx])
+            row = "".join(row_chars)
             y_pos = start_y + y * line_height
-            lines.append(f'    <tspan x="48" y="{y_pos:.2f}" xml:space="preserve">{row}</tspan>')
+            lines.append(f'    <tspan x="{start_x:.1f}" y="{y_pos:.2f}" xml:space="preserve">{row}</tspan>')
 
-        print(f"  [+] Generated ASCII portrait: {width}x{chars_tall} chars")
+        print(f"  [+] Generated ASCII portrait: {width}x{chars_tall} chars (centered at x={start_x:.0f}, y={start_y:.0f})")
         return "\n".join(lines)
 
     except Exception as e:
