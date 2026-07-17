@@ -14,27 +14,27 @@
   {{ TYPING_CLIP_PATHS }}
 
   
-  <clipPath id="sys-0"><rect x="525" y="66.0" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="0.68s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-1"><rect x="525" y="87.5" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="0.79s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-2"><rect x="525" y="109.0" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="0.89s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-3"><rect x="525" y="130.5" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="1.00s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-4"><rect x="525" y="152.0" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="1.10s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-5"><rect x="525" y="173.5" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="1.21s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-7"><rect x="525" y="205.5" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="1.42s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-8"><rect x="525" y="227.0" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="1.52s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-9"><rect x="525" y="248.5" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="1.63s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-10"><rect x="525" y="270.0" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="1.73s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-12"><rect x="525" y="302.0" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="1.94s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-13"><rect x="525" y="323.5" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="2.04s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-14"><rect x="525" y="345.0" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="2.15s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-15"><rect x="525" y="366.5" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="2.25s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-16"><rect x="525" y="388.0" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="2.36s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-18"><rect x="525" y="420.0" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="2.57s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-19"><rect x="525" y="441.5" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="2.67s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-21"><rect x="525" y="463.0" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="2.78s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-22"><rect x="525" y="484.5" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="2.89s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-23"><rect x="525" y="506.0" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="3.00s" fill="freeze"/></rect></clipPath>
-  <clipPath id="sys-24"><rect x="525" y="527.5" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="3.10s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-0"><rect x="525" y="66.0" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="0.68s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-1"><rect x="525" y="87.5" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="0.79s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-2"><rect x="525" y="109.0" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="0.89s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-3"><rect x="525" y="130.5" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="1.00s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-4"><rect x="525" y="152.0" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="1.10s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-5"><rect x="525" y="173.5" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="1.21s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-7"><rect x="525" y="205.5" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="1.42s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-8"><rect x="525" y="227.0" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="1.52s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-9"><rect x="525" y="248.5" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="1.63s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-10"><rect x="525" y="270.0" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="1.73s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-12"><rect x="525" y="302.0" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="1.94s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-13"><rect x="525" y="323.5" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="2.04s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-14"><rect x="525" y="345.0" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="2.15s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-15"><rect x="525" y="366.5" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="2.25s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-16"><rect x="525" y="388.0" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="2.36s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-18"><rect x="525" y="420.0" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="2.57s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-19"><rect x="525" y="441.5" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="2.67s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-21"><rect x="525" y="463.0" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="2.78s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-22"><rect x="525" y="484.5" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="2.89s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-23"><rect x="525" y="506.0" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="3.00s" fill="freeze"/></rect></clipPath>
+  <clipPath id="sys-24"><rect x="525" y="527.5" width="620" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="3.10s" fill="freeze"/></rect></clipPath>
   
   <!-- Tech icon definitions -->
   <g id="icon-nodejs">
@@ -141,7 +141,7 @@
 <text x="1049" y="24" class="live-label">{{ ACTIVE_STATUS }}</text>
 
 <!-- Typewriter Sound Indicator - pulses during ASCII typing animation -->
-<g opacity="0">
+<g opacity="1">
   <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.95;1" dur="4.2s" begin="3.3s" fill="freeze"/>
   <text x="1085" y="24" class="typewriter-label">
     <tspan fill="#22D3EE">♪
@@ -230,7 +230,7 @@
 
 <!-- Blinking terminal cursor at end of portrait -->
 <g clip-path="url(#portrait-clip)">
-  <rect x="{{ CURSOR_X }}" y="{{ CURSOR_Y }}" width="4" height="7" rx="0.5" fill="#22D3EE" opacity="0">
+  <rect x="{{ CURSOR_X }}" y="{{ CURSOR_Y }}" width="4" height="7" rx="0.5" fill="#22D3EE" opacity="1">
     <animate attributeName="opacity" values="1;0;1" keyTimes="0;0.5;1" dur="1.0s" begin="{{ CURSOR_DELAY }}s" repeatCount="indefinite"/>
   </rect>
 </g>
@@ -398,7 +398,7 @@
 </g>
 
 <!-- Blinking cursor -->
-<rect x="530" y="565" width="10" height="16" fill="#22D3EE" opacity="0">
+<rect x="530" y="565" width="10" height="16" fill="#22D3EE" opacity="1">
   <animate attributeName="opacity" values="0;0;1;0;1;0;1;0" keyTimes="0;0.03;0.06;0.32;0.5;0.68;0.84;1" dur="1.4s" begin="3.3s" repeatCount="indefinite"/>
 </rect>
 

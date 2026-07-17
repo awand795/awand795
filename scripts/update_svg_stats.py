@@ -165,7 +165,7 @@ def generate_matrix_rain(rng=None) -> str:
         y_end = panel_h     # +438 -> ends below view
 
         drop = (
-            f'  <g opacity="0">'
+            f'  <g opacity="1">'
             f'<animate attributeName="opacity" '
             f'values="0;{max_op:.2f};{max_op:.2f};0" '
             f'keyTimes="0;0.06;0.94;1" '
@@ -187,7 +187,7 @@ def generate_matrix_rain(rng=None) -> str:
             spark_max_op = max_op * rng.uniform(0.35, 0.55)
 
             spark = (
-                f'  <g opacity="0">'
+                f'  <g opacity="1">'
                 f'<animate attributeName="opacity" '
                 f'values="0;{spark_max_op:.2f};{spark_max_op:.2f};0" '
                 f'keyTimes="0;0.06;0.94;1" '
@@ -255,7 +255,7 @@ def generate_boot_particles(rng=None) -> str:
 
         particle = (
             f'  <circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r:.1f}" '
-            f'class="particle" opacity="0">'
+            f'class="particle" opacity="1">'
             # Fade in/out during boot period
             f'<animate attributeName="opacity" '
             f'values="0;{max_op:.2f};{max_op:.2f};0" '
@@ -386,15 +386,15 @@ def generate_boot_sequence(username: str = "unknown", repos: int | str = "?", fo
                         f'{pct_text}</tspan>'
                     )
                 else:
-                    # Last value (100%) stays visible
+                    # Last value (100%) — visible by default for static fallback
                     pct_states.append(
-                        f'<tspan visibility="hidden" class="pbar-pct">'
+                        f'<tspan visibility="visible" class="pbar-pct">'
                         f'<set attributeName="visibility" to="visible" begin="{show_at:.2f}s" fill="freeze"/>'
                         f'{pct_text}</tspan>'
                     )
 
             line_svg = (
-                f'  <g opacity="0">'
+                f'  <g opacity="1">'
                 f'<animate attributeName="opacity" values="0;1;1;0;0" '
                 f'keyTimes="0;0.06;0.70;0.85;1" dur="{dur_per_line:.1f}s" '
                 f'begin="{begin:.2f}s" fill="freeze"/>'
@@ -406,8 +406,8 @@ def generate_boot_sequence(username: str = "unknown", repos: int | str = "?", fo
                 # Bar background
                 f'<rect x="{bar_x}" y="{bar_y}" width="{bar_width}" height="{bar_height}" '
                 f'rx="{bar_rx}" fill="none" stroke="#64748B" stroke-width="1" opacity="0.4"/>'
-                # Bar fill
-                f'<rect x="{bar_x + 1}" y="{bar_y + 1}" width="0" height="{bar_height - 2}" '
+                # Bar fill — show full width as static fallback
+                f'<rect x="{bar_x + 1}" y="{bar_y + 1}" width="{bar_width - 2}" height="{bar_height - 2}" '
                 f'rx="{bar_rx - 0.5}" class="pbar-fill" opacity="0.55">'
                 f'<animate attributeName="width" from="0" to="{bar_width - 2}" '
                 f'dur="{bar_dur:.1f}s" begin="{begin:.2f}s" fill="freeze"/>'
@@ -421,7 +421,7 @@ def generate_boot_sequence(username: str = "unknown", repos: int | str = "?", fo
             )
         else:
             line_svg = (
-                f'  <g opacity="0">'
+                f'  <g opacity="1">'
                 f'<animate attributeName="opacity" values="0;1;1;0;0" '
                 f'keyTimes="0;0.06;0.70;0.85;1" dur="{dur_per_line:.1f}s" '
                 f'begin="{begin:.2f}s" fill="freeze"/>'
@@ -645,7 +645,7 @@ def fetch_ascii_portrait(avatar_url: str | None, width: int = 82, max_rows: int 
             # Per-line clip path for typing effect
             clip_paths.append(
                 f'  <clipPath id="typing-{y}">'
-                f'<rect x="{start_x:.1f}" y="{y_pos:.2f}" width="0" height="{line_height}">'
+                f'<rect x="{start_x:.1f}" y="{y_pos:.2f}" width="{reveal_width:.0f}" height="{line_height}">'
                 f'<animate attributeName="width" from="0" to="{reveal_width:.0f}" '
                 f'dur="{typing_duration}s" begin="{delay:.2f}s" fill="freeze" '
                 f'calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/>'
