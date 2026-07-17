@@ -177,30 +177,32 @@ def generate_matrix_rain(rng=None) -> str:
         )
         drops.append(drop)
 
-        # Add a shorter "spark" drop in the same column for visual density
-        # (smaller string, faster, lower opacity, slight x jitter)
-        spark_chars = "".join(rng.choice(MATRIX_CHARS) for _ in range(rng.randint(4, 8)))
-        spark_dur = duration * rng.uniform(0.6, 0.85)
-        spark_delay = delay + rng.uniform(0.3, 1.5)
-        spark_max_op = max_op * rng.uniform(0.35, 0.55)
+        # Add a shorter "spark" drop for half the columns for visual density
+        # (reduced from 16 to 8 to save ~16 indefinite animations per frame)
+        if i % 2 == 0:
+            spark_chars = "".join(rng.choice(MATRIX_CHARS) for _ in range(rng.randint(4, 8)))
+            spark_dur = duration * rng.uniform(0.6, 0.85)
+            spark_delay = delay + rng.uniform(0.3, 1.5)
+            spark_max_op = max_op * rng.uniform(0.35, 0.55)
 
-        spark = (
-            f'  <g opacity="0">'
-            f'<animate attributeName="opacity" '
-            f'values="0;{spark_max_op:.2f};{spark_max_op:.2f};0" '
-            f'keyTimes="0;0.06;0.94;1" '
-            f'dur="{spark_dur:.1f}s" begin="{spark_delay:.1f}s" repeatCount="indefinite"/>'
-            f'<text class="matrix" x="{x + rng.choice([-2, 0, 2])}" '
-            f'y="{panel_y0 + rng.randint(-20, 20)}">{spark_chars}'
-            f'<animateTransform attributeName="transform" type="translate" '
-            f'from="0 {y_start}" to="0 {y_end}" '
-            f'dur="{spark_dur:.1f}s" begin="{spark_delay:.1f}s" repeatCount="indefinite"/>'
-            f'</text></g>'
-        )
-        drops.append(spark)
+            spark = (
+                f'  <g opacity="0">'
+                f'<animate attributeName="opacity" '
+                f'values="0;{spark_max_op:.2f};{spark_max_op:.2f};0" '
+                f'keyTimes="0;0.06;0.94;1" '
+                f'dur="{spark_dur:.1f}s" begin="{spark_delay:.1f}s" repeatCount="indefinite"/>'
+                f'<text class="matrix" x="{x + rng.choice([-2, 0, 2])}" '
+                f'y="{panel_y0 + rng.randint(-20, 20)}">{spark_chars}'
+                f'<animateTransform attributeName="transform" type="translate" '
+                f'from="0 {y_start}" to="0 {y_end}" '
+                f'dur="{spark_dur:.1f}s" begin="{spark_delay:.1f}s" repeatCount="indefinite"/>'
+                f'</text></g>'
+            )
+            drops.append(spark)
 
+    spark_count = len(drops) - n_cols
     svg_markup = "\n".join(drops)
-    print(f"  [+] Matrix rain: {n_cols} columns + {n_cols} sparks = {len(drops)} drops")
+    print(f"  [+] Matrix rain: {n_cols} columns + {spark_count} sparks = {len(drops)} drops")
     return svg_markup
 
 

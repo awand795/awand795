@@ -139,7 +139,7 @@
   <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.95;1" dur="4.2s" begin="3.3s" fill="freeze"/>
   <text x="1085" y="24" class="typewriter-label">
     <tspan fill="#059669">♪
-      <animate attributeName="opacity" values="1;0.3;1" dur="0.5s" begin="3.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1" dur="0.5s" begin="3.4s" end="7.5s" repeatCount="indefinite" fill="freeze"/>
     </tspan>
     <tspan> TYPEWRITER</tspan>
   </text>
