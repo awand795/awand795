@@ -258,11 +258,11 @@ def generate_boot_particles(rng=None) -> str:
             f'values="0;{max_op:.2f};{max_op:.2f};0" '
             f'keyTimes="0;0.10;0.85;1" '
             f'dur="{dur:.1f}s" begin="{delay:.2f}s" fill="freeze"/>'
-            # Subtle size pulse for sparkle
+            # Subtle size pulse for sparkle (freezes when particle fades out)
             f'<animate attributeName="r" '
             f'values="{r:.1f};{r + r_variation:.1f};{r:.1f}" '
             f'dur="{dur * 0.6:.1f}s" begin="{delay:.2f}s" '
-            f'repeatCount="indefinite"/>'
+            f'fill="freeze"/>'
             # Movement drift
             f'<animateTransform attributeName="transform" '
             f'type="translate" '
