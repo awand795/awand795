@@ -120,7 +120,7 @@ MATRIX_CHARS = (
     "0123456789"
     "abcdefghijklmnopqrstuvwxyz"
     # Symbols for extra cyberpunk flavor
-    "#$%&+-*/=>?@[]^_"
+"#$%+-*/=>?@[]^_"
 )
 
 
