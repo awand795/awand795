@@ -19,5 +19,9 @@ assets/hero/agent-console-static.svg
 *.tmp
 *.log
 
+# Python cache
+__pycache__/
+*.pyc
+
 # Local tool config
 .freebuff/
