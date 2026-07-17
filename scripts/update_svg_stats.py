@@ -22,6 +22,7 @@ Design note:
 import io
 import json
 import os
+import random as _random
 import sys
 import urllib.request
 import urllib.error
@@ -105,6 +106,97 @@ def fetch_last_push(username: str):
         if created_at:
             return created_at
     return None
+
+
+# ── Matrix Rain ───────────────────────────────────────────────────────────
+MATRIX_CHARS = (
+    "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿ"
+    "ﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓ"
+    "ﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝ"
+    "0123456789"
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    "#$%&+-*/=>?@[]^_"
+)
+
+
+def generate_matrix_rain(rng=None) -> str:
+    """Generate SVG matrix rain effect: falling columns of katakana & symbols.
+
+    Creates 16 columns spread across the portrait panel, each containing
+    a random string of characters that scrolls vertically with staggered
+    timing, cycling indefinitely. Provides the classic 'digital rain' vibe.
+    """
+    if rng is None:
+        rng = _random.Random()
+
+    panel_x0 = 24
+    panel_x1 = 494
+    panel_w = panel_x1 - panel_x0  # 470
+    panel_y0 = 82
+    panel_y1 = 520
+    panel_h = panel_y1 - panel_y0  # 438
+
+    n_cols = 16
+    chars_per_col = 22
+    col_spacing = panel_w // (n_cols + 1)
+
+    drops = []
+
+    for i in range(n_cols):
+        x = panel_x0 + col_spacing * (i + 1) + rng.randint(-4, 4)
+        # Vary speed and timing for organic feel
+        duration = rng.uniform(3.5, 7.5)
+        delay = rng.uniform(0.0, 5.0)
+        # Head brighter than tail via max_opacity
+        max_op = rng.uniform(0.30, 0.55)
+
+        # Build random character string
+        chars = "".join(rng.choice(MATRIX_CHARS) for _ in range(chars_per_col))
+
+        # The column scrolls from above panel to below
+        # y-offset starts at -panel_h and ends at +panel_h
+        y_start = -panel_h  # -438 -> starts above view
+        y_end = panel_h     # +438 -> ends below view
+
+        drop = (
+            f'  <g opacity="0">'
+            f'<animate attributeName="opacity" '
+            f'values="0;{max_op:.2f};{max_op:.2f};0" '
+            f'keyTimes="0;0.06;0.94;1" '
+            f'dur="{duration:.1f}s" begin="{delay:.1f}s" repeatCount="indefinite"/>'
+            f'<text class="matrix" x="{x}" y="{panel_y0}">{chars}'
+            f'<animateTransform attributeName="transform" type="translate" '
+            f'from="0 {y_start}" to="0 {y_end}" '
+            f'dur="{duration:.1f}s" begin="{delay:.1f}s" repeatCount="indefinite"/>'
+            f'</text></g>'
+        )
+        drops.append(drop)
+
+        # Add a shorter "spark" drop in the same column for visual density
+        # (smaller string, faster, lower opacity, slight x jitter)
+        spark_chars = "".join(rng.choice(MATRIX_CHARS) for _ in range(rng.randint(4, 8)))
+        spark_dur = duration * rng.uniform(0.6, 0.85)
+        spark_delay = delay + rng.uniform(0.3, 1.5)
+        spark_max_op = max_op * rng.uniform(0.35, 0.55)
+
+        spark = (
+            f'  <g opacity="0">'
+            f'<animate attributeName="opacity" '
+            f'values="0;{spark_max_op:.2f};{spark_max_op:.2f};0" '
+            f'keyTimes="0;0.06;0.94;1" '
+            f'dur="{spark_dur:.1f}s" begin="{spark_delay:.1f}s" repeatCount="indefinite"/>'
+            f'<text class="matrix" x="{x + rng.choice([-2, 0, 2])}" '
+            f'y="{panel_y0 + rng.randint(-20, 20)}">{spark_chars}'
+            f'<animateTransform attributeName="transform" type="translate" '
+            f'from="0 {y_start}" to="0 {y_end}" '
+            f'dur="{spark_dur:.1f}s" begin="{spark_delay:.1f}s" repeatCount="indefinite"/>'
+            f'</text></g>'
+        )
+        drops.append(spark)
+
+    svg_markup = "\n".join(drops)
+    print(f"  [+] Matrix rain: {n_cols} columns + {n_cols} sparks = {len(drops)} drops")
+    return svg_markup
 
 
 # ── Boot Sequence ──────────────────────────────────────────────────────────
@@ -558,6 +650,7 @@ def main():
         "{{ LAST_SYNC }}": last_sync,
         "{{ ASCII_PORTRAIT }}": ascii_portrait,
         "{{ TYPING_CLIP_PATHS }}": typing_clip_paths,
+        "{{ MATRIX_RAIN }}": generate_matrix_rain(),
         "{{ BOOT_SEQUENCE }}": boot_svg,
         "{{ CURSOR_X }}": str(cursor_data["x"]),
         "{{ CURSOR_Y }}": str(cursor_data["y"]),
