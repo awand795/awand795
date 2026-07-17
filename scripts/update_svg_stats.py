@@ -157,7 +157,7 @@ def generate_matrix_rain(rng=None) -> str:
         max_op = rng.uniform(0.30, 0.55)
 
         # Build random character string
-        chars = html.escape("".join(rng.choice(MATRIX_CHARS) for _ in range(chars_per_col)))
+        chars = html.escape("".join(rng.choice(MATRIX_CHARS) for _ in range(chars_per_col)), quote=False)
 
         # The column scrolls from above panel to below
         # y-offset starts at -panel_h and ends at +panel_h
@@ -181,7 +181,7 @@ def generate_matrix_rain(rng=None) -> str:
         # Add a shorter "spark" drop for half the columns for visual density
         # (reduced from 16 to 8 to save ~16 indefinite animations per frame)
         if i % 2 == 0:
-            spark_chars = html.escape("".join(rng.choice(MATRIX_CHARS) for _ in range(rng.randint(4, 8))))
+            spark_chars = html.escape("".join(rng.choice(MATRIX_CHARS) for _ in range(rng.randint(4, 8))), quote=False)
             spark_dur = duration * rng.uniform(0.6, 0.85)
             spark_delay = delay + rng.uniform(0.3, 1.5)
             spark_max_op = max_op * rng.uniform(0.35, 0.55)
