@@ -325,6 +325,20 @@ def generate_boot_sequence() -> tuple[str, float]:
 
         status_text = f"[{status:>4}]"
 
+        # Build status badge tspan (with optional blink animation for WARN)
+        if status == "WARN":
+            # [WARN] blinks red before settling to amber — terminal tension moment
+            warn_badge = (
+                f'<tspan fill="#EF4444">'
+                f'<animate attributeName="fill" '
+                f'values="#EF4444;#EF4444;#B91C1C;#EF4444;#B91C1C;#EF4444;#B91C1C;#F59E0B" '
+                f'keyTimes="0;0.06;0.10;0.14;0.18;0.22;0.26;0.32" '
+                f'dur="{dur_per_line:.1f}s" begin="{begin:.2f}s" fill="freeze"/>'
+                f'{status_text}</tspan>'
+            )
+        else:
+            warn_badge = f'<tspan fill="{status_color}">{status_text}</tspan>'
+
         lines.append(
             f'  <g opacity="0">'
             f'<animate attributeName="opacity" values="0;1;1;0;0" '
@@ -332,7 +346,7 @@ def generate_boot_sequence() -> tuple[str, float]:
             f'begin="{begin:.2f}s" fill="freeze"/>'
             f'<text x="{panel_center_x}" y="{y:.0f}" text-anchor="middle" '
             f'class="boot-msg">'
-            f'<tspan fill="{status_color}">{status_text}</tspan>'
+            f'{warn_badge}'
             f'<tspan fill="#94A3B8">  {msg}</tspan>'
             f'</text></g>'
         )
