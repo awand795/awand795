@@ -279,19 +279,24 @@ def generate_boot_particles(rng=None) -> str:
 
 # ── Boot Sequence ──────────────────────────────────────────────────────────
 BOOT_MESSAGES = [
-    ("OK",   "INITIALIZING AGENT CONSOLE..."),
-    ("OK",   "LOADING USER PROFILE..."),
-    ("OK",   "SYNCING GITHUB DATA..."),
+    ("OK",   "INITIALIZING CONSOLE: @{username}..."),
+    ("OK",   "LOADING PROFILE: {username}..."),
+    ("OK",   "SYNCING DATA: {repos} REPOS, {followers} FOLLOWERS"),
     ("WARN", "ESTABLISHING CONNECTION..."),
     ("PROG", "SYSTEM INITIALIZATION"),
-    ("OK",   "AUTHENTICATING..."),
+    ("OK",   "AUTHENTICATING: @{username}..."),
     ("OK",   "DECRYPTING PAYLOAD..."),
-    ("RUN",  "AGENT PROFILE ACTIVE"),
+    ("RUN",  "AGENT PROFILE: {username} [ACTIVE]"),
 ]
 
 
-def generate_boot_sequence() -> tuple[str, float]:
-    """Generate SVG boot sequence elements.
+def generate_boot_sequence(username: str = "unknown", repos: int | str = "?", followers: int | str = "?") -> tuple[str, float]:
+    """Generate SVG boot sequence elements with personalized GitHub stats.
+
+    Args:
+        username:  GitHub username (e.g. "awand795")
+        repos:     Total public repositories (e.g. 51)
+        followers: Total followers (e.g. 4)
 
     Returns (svg_markup, boot_delay):
       - svg_markup: SVG elements for the animated boot messages
@@ -299,12 +304,19 @@ def generate_boot_sequence() -> tuple[str, float]:
 
     Each boot message fades in, stays visible briefly, then fades out
     with staggered timing, creating a terminal boot-up effect.
+    Messages are formatted with the user's actual GitHub data.
     """
     panel_center_x = 259  # 24 + 470/2
     panel_center_y = 301  # 82 + 438/2
 
     line_height = 22
-    total_lines = len(BOOT_MESSAGES)
+    # Format messages with personal data
+    formatted_messages = []
+    for status, msg_template in BOOT_MESSAGES:
+        msg = msg_template.format(username=username, repos=repos, followers=followers)
+        formatted_messages.append((status, msg))
+
+    total_lines = len(formatted_messages)
     total_height = total_lines * line_height
     start_y = panel_center_y - total_height / 2
 
@@ -313,7 +325,7 @@ def generate_boot_sequence() -> tuple[str, float]:
     first_delay = 0.40    # first message start delay
 
     lines = []
-    for i, (status, msg) in enumerate(BOOT_MESSAGES):
+    for i, (status, msg) in enumerate(formatted_messages):
         y = start_y + i * line_height
         begin = first_delay + i * stagger
 
@@ -785,7 +797,7 @@ def main():
     last_sync = format_timestamp()
 
     # Generate boot sequence (terminal boot-up animation before typing)
-    boot_svg, boot_delay = generate_boot_sequence()
+    boot_svg, boot_delay = generate_boot_sequence(username=GITHUB_USER, repos=repos, followers=followers)
 
     # Generate ASCII portrait from avatar (typing starts after boot sequence)
     ascii_portrait, typing_clip_paths = fetch_ascii_portrait(avatar_url, typing_delay_start=boot_delay)
