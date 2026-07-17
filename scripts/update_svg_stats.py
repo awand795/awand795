@@ -22,7 +22,7 @@ Design note:
 import io
 import json
 import os
-import random as _random
+import random
 import sys
 import urllib.request
 import urllib.error
@@ -127,7 +127,7 @@ def generate_matrix_rain(rng=None) -> str:
     timing, cycling indefinitely. Provides the classic 'digital rain' vibe.
     """
     if rng is None:
-        rng = _random.Random()
+        rng = random.Random()
 
     panel_x0 = 24
     panel_x1 = 494
