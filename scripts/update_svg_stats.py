@@ -110,11 +110,16 @@ def fetch_last_push(username: str):
 
 # ── Matrix Rain ───────────────────────────────────────────────────────────
 MATRIX_CHARS = (
+    # Half-width katakana (matrix aesthetic)
     "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿ"
     "ﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓ"
     "ﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝ"
+    # Latin & digits — guaranteed to render in any monospace font
     "0123456789"
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    "0123456789"
+    "abcdefghijklmnopqrstuvwxyz"
+    # Symbols for extra cyberpunk flavor
     "#$%&+-*/=>?@[]^_"
 )
 
