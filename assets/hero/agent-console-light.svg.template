@@ -116,6 +116,7 @@
     .boot-msg { font-family: 'Courier New', Consolas, monospace; font-size: 13px; letter-spacing: 0.3px; }
     .matrix { font-family: 'Courier New', Consolas, 'MS Gothic', monospace; font-size: 9px; fill: #059669; letter-spacing: 1.5px; }
     .typewriter-label { font-family: 'Courier New', Consolas, monospace; font-size: 10px; letter-spacing: 0.5px; fill: #64748B; }
+    .particle { fill: #059669; }
     text, tspan { white-space: pre; }
   </style>
 </defs>
@@ -155,6 +156,9 @@
 <g clip-path="url(#portrait-clip)" class="ambient-map" aria-hidden="true">
   <!-- Matrix Rain Background -->
 {{ MATRIX_RAIN }}
+
+  <!-- Boot Sequence Particles -->
+{{ BOOT_PARTICLES }}
 
   <rect x="24" y="82" width="470" height="438" fill="url(#portrait-grid)"/>
   <ellipse cx="268.4" cy="292.2" rx="228.4" ry="137.2" fill="url(#portrait-halo)"/>

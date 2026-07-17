@@ -204,6 +204,79 @@ def generate_matrix_rain(rng=None) -> str:
     return svg_markup
 
 
+# ── Boot Particles ─────────────────────────────────────────────────────────
+def generate_boot_particles(rng=None) -> str:
+    """Generate SVG spark/particle effect during boot sequence.
+
+    Creates ~35 small circular particles scattered across the portrait
+    panel that drift in random directions with fade in/out during the
+    boot sequence period (0.3s to 3.2s). Provides a cinematic 'system
+    wake-up' visual.
+    """
+    if rng is None:
+        rng = random.Random()
+
+    panel_x0 = 24
+    panel_x1 = 494
+    panel_y0 = 82
+    panel_y1 = 520
+
+    n_particles = 35
+    particles = []
+
+    # Boot sequence animation period
+    # First message at 0.40s, last message gone by ~3.01s
+    # Particles should appear during this window
+    boot_start = 0.30
+    boot_end = 3.00
+
+    for _ in range(n_particles):
+        # Random position within panel
+        cx = rng.uniform(panel_x0 + 10, panel_x1 - 10)
+        cy = rng.uniform(panel_y0 + 10, panel_y1 - 10)
+
+        # Random size (small dots for sparkle effect)
+        r = rng.uniform(0.8, 2.5)
+
+        # Random movement (small drift in random direction)
+        dx = rng.uniform(-25, 25)
+        dy = rng.uniform(-25, 25)
+
+        # Random animation timing
+        dur = rng.uniform(0.8, 2.0)
+        delay = rng.uniform(boot_start, boot_end - dur)
+        max_op = rng.uniform(0.25, 0.65)
+
+        # Random initial size animation (pulsing)
+        r_variation = r * rng.uniform(0.3, 0.7)
+
+        particle = (
+            f'  <circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r:.1f}" '
+            f'class="particle" opacity="0">'
+            # Fade in/out during boot period
+            f'<animate attributeName="opacity" '
+            f'values="0;{max_op:.2f};{max_op:.2f};0" '
+            f'keyTimes="0;0.10;0.85;1" '
+            f'dur="{dur:.1f}s" begin="{delay:.2f}s" fill="freeze"/>'
+            # Subtle size pulse for sparkle
+            f'<animate attributeName="r" '
+            f'values="{r:.1f};{r + r_variation:.1f};{r:.1f}" '
+            f'dur="{dur * 0.6:.1f}s" begin="{delay:.2f}s" '
+            f'repeatCount="indefinite"/>'
+            # Movement drift
+            f'<animateTransform attributeName="transform" '
+            f'type="translate" '
+            f'from="0 0" to="{dx:.1f} {dy:.1f}" '
+            f'dur="{dur:.1f}s" begin="{delay:.2f}s" fill="freeze"/>'
+            f'</circle>'
+        )
+        particles.append(particle)
+
+    svg_markup = "\n".join(particles)
+    print(f"  [+] Boot particles: {n_particles} sparks generated")
+    return svg_markup
+
+
 # ── Boot Sequence ──────────────────────────────────────────────────────────
 BOOT_MESSAGES = [
     ("OK",   "INITIALIZING AGENT CONSOLE..."),
@@ -656,6 +729,7 @@ def main():
         "{{ ASCII_PORTRAIT }}": ascii_portrait,
         "{{ TYPING_CLIP_PATHS }}": typing_clip_paths,
         "{{ MATRIX_RAIN }}": generate_matrix_rain(),
+        "{{ BOOT_PARTICLES }}": generate_boot_particles(),
         "{{ BOOT_SEQUENCE }}": boot_svg,
         "{{ CURSOR_X }}": str(cursor_data["x"]),
         "{{ CURSOR_Y }}": str(cursor_data["y"]),
