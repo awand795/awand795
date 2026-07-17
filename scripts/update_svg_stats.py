@@ -107,6 +107,74 @@ def fetch_last_push(username: str):
     return None
 
 
+# ── Boot Sequence ──────────────────────────────────────────────────────────
+BOOT_MESSAGES = [
+    ("OK",   "INITIALIZING AGENT CONSOLE..."),
+    ("OK",   "LOADING USER PROFILE..."),
+    ("OK",   "SYNCING GITHUB DATA..."),
+    ("WARN", "ESTABLISHING CONNECTION..."),
+    ("OK",   "AUTHENTICATING..."),
+    ("OK",   "DECRYPTING PAYLOAD..."),
+    ("RUN",  "AGENT PROFILE ACTIVE"),
+]
+
+
+def generate_boot_sequence() -> tuple[str, float]:
+    """Generate SVG boot sequence elements.
+
+    Returns (svg_markup, boot_delay):
+      - svg_markup: SVG elements for the animated boot messages
+      - boot_delay:  time (seconds) after which typing animation should start
+
+    Each boot message fades in, stays visible briefly, then fades out
+    with staggered timing, creating a terminal boot-up effect.
+    """
+    panel_center_x = 259  # 24 + 470/2
+    panel_center_y = 301  # 82 + 438/2
+
+    line_height = 22
+    total_lines = len(BOOT_MESSAGES)
+    total_height = total_lines * line_height
+    start_y = panel_center_y - total_height / 2
+
+    dur_per_line = 1.3    # total animation duration per message
+    stagger = 0.25        # stagger between message starts
+    first_delay = 0.40    # first message start delay
+
+    lines = []
+    for i, (status, msg) in enumerate(BOOT_MESSAGES):
+        y = start_y + i * line_height
+        begin = first_delay + i * stagger
+
+        if status == "OK":
+            status_color = "#10B981"
+        elif status == "WARN":
+            status_color = "#F59E0B"
+        else:  # "RUN" / ">>"
+            status_color = "#22D3EE"
+
+        status_text = f"[{status:>4}]"
+
+        lines.append(
+            f'  <g opacity="0">'
+            f'<animate attributeName="opacity" values="0;1;1;0;0" '
+            f'keyTimes="0;0.06;0.70;0.85;1" dur="{dur_per_line:.1f}s" '
+            f'begin="{begin:.2f}s" fill="freeze"/>'
+            f'<text x="{panel_center_x}" y="{y:.0f}" text-anchor="middle" '
+            f'class="boot-msg">'
+            f'<tspan fill="{status_color}">{status_text}</tspan>'
+            f'<tspan fill="#94A3B8">  {msg}</tspan>'
+            f'</text></g>'
+        )
+
+    svg_markup = "\n".join(lines)
+    boot_delay = first_delay + (total_lines - 1) * stagger + dur_per_line + 0.20
+    # = 0.40 + 1.50 + 1.30 + 0.20 = 3.40s
+
+    print(f"  [+] Boot sequence: {total_lines} messages, ~{boot_delay - 0.20:.1f}s total, typing at {boot_delay:.2f}s")
+    return svg_markup, boot_delay
+
+
 def _remove_background(img: Image.Image, margin: float = 0.10) -> Image.Image:
     """
     Auto-detect and crop away the background of a GitHub avatar.
@@ -213,7 +281,8 @@ def _remove_background(img: Image.Image, margin: float = 0.10) -> Image.Image:
     return cropped
 
 
-def fetch_ascii_portrait(avatar_url: str | None, width: int = 82, max_rows: int = 60) -> tuple[str, str]:
+def fetch_ascii_portrait(avatar_url: str | None, width: int = 82, max_rows: int = 60,
+                         typing_delay_start: float = 0.30) -> tuple[str, str]:
     """Download the GitHub avatar and convert it to an ASCII art SVG text block.
 
     Returns (tspan_lines, typing_clip_paths):
@@ -289,11 +358,10 @@ def fetch_ascii_portrait(avatar_url: str | None, width: int = 82, max_rows: int 
         clip_paths = []
 
         # Typing animation timing
-        # Each line reveals left-to-right over 0.25s, staggered 0.07s apart
-        # Animation starts 0.3s after SVG loads
+        # Each line reveals left-to-right over 0.25s, staggered 0.08s apart
+        # Animation starts after boot sequence completes (typing_delay_start)
         typing_duration = 0.25
         typing_stagger = 0.08
-        typing_delay_start = 0.30
         reveal_width = text_width + 15  # slightly wider than text to avoid clipping last char
 
         for y in range(chars_tall):
@@ -331,12 +399,15 @@ def fetch_ascii_portrait(avatar_url: str | None, width: int = 82, max_rows: int 
         tspan_output = "\n".join(lines)
         clip_output = "\n".join(clip_paths)
 
-        # Cache cursor position for compute_cursor_position()
-        global _CURSOR_X, _CURSOR_Y, _CURSOR_CHARS_TALL
+        # Cache cursor position & timing for compute_cursor_position()
+        global _CURSOR_X, _CURSOR_Y, _CURSOR_CHARS_TALL, _CURSOR_DELAY_START, _CURSOR_STAGGER, _CURSOR_DURATION
         last_line_y = start_y + (chars_tall - 1) * line_height
         _CURSOR_X = start_x + text_width + 2  # 2px after last char
         _CURSOR_Y = last_line_y - line_height + 0.5  # top of character cell
         _CURSOR_CHARS_TALL = chars_tall
+        _CURSOR_DELAY_START = typing_delay_start
+        _CURSOR_STAGGER = typing_stagger
+        _CURSOR_DURATION = typing_duration
 
         total_anim = typing_delay_start + (chars_tall - 1) * typing_stagger + typing_duration
         print(f"  [+] Generated ASCII portrait: {width}x{chars_tall} chars (centered at x={start_x:.0f}, y={start_y:.0f})")
@@ -348,10 +419,7 @@ def fetch_ascii_portrait(avatar_url: str | None, width: int = 82, max_rows: int 
 
     except Exception as e:
         print(f"  [!] Failed to generate ASCII portrait: {e}", file=sys.stderr)
-        return "", ""
-
-
-# Module-level cache for cursor position set by fetch_ascii_portrait
+        return "", ""    # Module-level cache for cursor position set by fetch_ascii_portrait
 _CURSOR_X = 0.0
 _CURSOR_Y = 0.0
 _CURSOR_CHARS_TALL = 0
@@ -465,14 +533,18 @@ def main():
     # Format last sync timestamp
     last_sync = format_timestamp()
 
-    # Generate ASCII portrait from avatar
-    ascii_portrait, typing_clip_paths = fetch_ascii_portrait(avatar_url)
+    # Generate boot sequence (terminal boot-up animation before typing)
+    boot_svg, boot_delay = generate_boot_sequence()
+
+    # Generate ASCII portrait from avatar (typing starts after boot sequence)
+    ascii_portrait, typing_clip_paths = fetch_ascii_portrait(avatar_url, typing_delay_start=boot_delay)
 
     print(f"\n  Repos:      {repos}")
     print(f"  Followers:  {followers}")
     print(f"  Status:     {active_status}")
     print(f"  Last Sync:  {last_sync}")
-    print(f"  ASCII art:  {'Yes' if ascii_portrait else 'Fallback'}\n")
+    print(f"  ASCII art:  {'Yes' if ascii_portrait else 'Fallback'}")
+    print(f"  Boot delay: {boot_delay:.2f}s\n")
 
     # Compute blinking cursor position (end of last ASCII line)
     # and delay (after typing animation finishes)
@@ -486,6 +558,7 @@ def main():
         "{{ LAST_SYNC }}": last_sync,
         "{{ ASCII_PORTRAIT }}": ascii_portrait,
         "{{ TYPING_CLIP_PATHS }}": typing_clip_paths,
+        "{{ BOOT_SEQUENCE }}": boot_svg,
         "{{ CURSOR_X }}": str(cursor_data["x"]),
         "{{ CURSOR_Y }}": str(cursor_data["y"]),
         "{{ CURSOR_DELAY }}": str(cursor_data["delay"]),

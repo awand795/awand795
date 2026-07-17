@@ -11,51 +11,51 @@
   <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#22D3EE" opacity="0.052"/></pattern>
   <pattern id="portrait-grid" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M 44 0 H 0 V 44" fill="none" stroke="#38BDF8" stroke-width="0.65" opacity="0.085"/><circle cx="0" cy="0" r="1.2" fill="#22D3EE" opacity="0.13"/></pattern>
   <clipPath id="portrait-clip"><rect x="24" y="82" width="470" height="438" rx="12"/></clipPath>
-    <clipPath id="typing-0"><rect x="99.1" y="140.12" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="0.30s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-1"><rect x="99.1" y="147.28" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="0.38s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-2"><rect x="99.1" y="154.43" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="0.46s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-3"><rect x="99.1" y="161.57" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="0.54s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-4"><rect x="99.1" y="168.72" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="0.62s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-5"><rect x="99.1" y="175.88" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="0.70s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-6"><rect x="99.1" y="183.03" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="0.78s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-7"><rect x="99.1" y="190.18" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="0.86s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-8"><rect x="99.1" y="197.32" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="0.94s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-9"><rect x="99.1" y="204.48" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="1.02s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-10"><rect x="99.1" y="211.62" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="1.10s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-11"><rect x="99.1" y="218.78" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="1.18s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-12"><rect x="99.1" y="225.93" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="1.26s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-13"><rect x="99.1" y="233.07" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="1.34s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-14"><rect x="99.1" y="240.23" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="1.42s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-15"><rect x="99.1" y="247.38" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="1.50s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-16"><rect x="99.1" y="254.53" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="1.58s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-17"><rect x="99.1" y="261.68" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="1.66s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-18"><rect x="99.1" y="268.83" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="1.74s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-19"><rect x="99.1" y="275.98" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="1.82s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-20"><rect x="99.1" y="283.12" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="1.90s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-21"><rect x="99.1" y="290.27" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="1.98s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-22"><rect x="99.1" y="297.43" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="2.06s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-23"><rect x="99.1" y="304.58" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="2.14s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-24"><rect x="99.1" y="311.73" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="2.22s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-25"><rect x="99.1" y="318.88" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="2.30s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-26"><rect x="99.1" y="326.02" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="2.38s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-27"><rect x="99.1" y="333.18" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="2.46s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-28"><rect x="99.1" y="340.33" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="2.54s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-29"><rect x="99.1" y="347.48" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="2.62s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-30"><rect x="99.1" y="354.62" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="2.70s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-31"><rect x="99.1" y="361.77" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="2.78s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-32"><rect x="99.1" y="368.93" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="2.86s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-33"><rect x="99.1" y="376.08" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="2.94s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-34"><rect x="99.1" y="383.23" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.02s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-35"><rect x="99.1" y="390.38" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.10s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-36"><rect x="99.1" y="397.53" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.18s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-37"><rect x="99.1" y="404.68" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.26s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-38"><rect x="99.1" y="411.82" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.34s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-39"><rect x="99.1" y="418.98" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.42s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-40"><rect x="99.1" y="426.12" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.50s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-41"><rect x="99.1" y="433.28" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.58s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-42"><rect x="99.1" y="440.43" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.66s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-43"><rect x="99.1" y="447.57" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.74s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
-  <clipPath id="typing-44"><rect x="99.1" y="454.73" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.82s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+    <clipPath id="typing-0"><rect x="99.1" y="140.12" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.40s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-1"><rect x="99.1" y="147.28" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.48s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-2"><rect x="99.1" y="154.43" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.56s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-3"><rect x="99.1" y="161.57" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.64s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-4"><rect x="99.1" y="168.72" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.72s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-5"><rect x="99.1" y="175.88" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.80s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-6"><rect x="99.1" y="183.03" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.88s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-7"><rect x="99.1" y="190.18" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="3.96s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-8"><rect x="99.1" y="197.32" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="4.04s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-9"><rect x="99.1" y="204.48" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="4.12s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-10"><rect x="99.1" y="211.62" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="4.20s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-11"><rect x="99.1" y="218.78" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="4.28s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-12"><rect x="99.1" y="225.93" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="4.36s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-13"><rect x="99.1" y="233.07" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="4.44s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-14"><rect x="99.1" y="240.23" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="4.52s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-15"><rect x="99.1" y="247.38" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="4.60s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-16"><rect x="99.1" y="254.53" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="4.68s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-17"><rect x="99.1" y="261.68" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="4.76s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-18"><rect x="99.1" y="268.83" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="4.84s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-19"><rect x="99.1" y="275.98" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="4.92s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-20"><rect x="99.1" y="283.12" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="5.00s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-21"><rect x="99.1" y="290.27" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="5.08s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-22"><rect x="99.1" y="297.43" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="5.16s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-23"><rect x="99.1" y="304.58" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="5.24s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-24"><rect x="99.1" y="311.73" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="5.32s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-25"><rect x="99.1" y="318.88" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="5.40s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-26"><rect x="99.1" y="326.02" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="5.48s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-27"><rect x="99.1" y="333.18" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="5.56s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-28"><rect x="99.1" y="340.33" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="5.64s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-29"><rect x="99.1" y="347.48" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="5.72s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-30"><rect x="99.1" y="354.62" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="5.80s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-31"><rect x="99.1" y="361.77" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="5.88s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-32"><rect x="99.1" y="368.93" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="5.96s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-33"><rect x="99.1" y="376.08" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="6.04s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-34"><rect x="99.1" y="383.23" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="6.12s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-35"><rect x="99.1" y="390.38" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="6.20s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-36"><rect x="99.1" y="397.53" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="6.28s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-37"><rect x="99.1" y="404.68" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="6.36s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-38"><rect x="99.1" y="411.82" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="6.44s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-39"><rect x="99.1" y="418.98" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="6.52s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-40"><rect x="99.1" y="426.12" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="6.60s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-41"><rect x="99.1" y="433.28" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="6.68s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-42"><rect x="99.1" y="440.43" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="6.76s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-43"><rect x="99.1" y="447.57" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="6.84s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
+  <clipPath id="typing-44"><rect x="99.1" y="454.73" width="0" height="7.15"><animate attributeName="width" from="0" to="335" dur="0.25s" begin="6.92s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1" keyTimes="0;1"/></rect></clipPath>
 
   
   <clipPath id="sys-0"><rect x="525" y="66.0" width="0" height="22"><animate attributeName="width" from="0" to="620" dur="0.36s" begin="0.68s" fill="freeze"/></rect></clipPath>
@@ -163,6 +163,7 @@
     .system-head { font-family: 'Courier New', Consolas, monospace; font-size: 16px; font-weight: 700; }
     .system-section, .system-footer, .system-row { font-family: 'Courier New', Consolas, monospace; font-size: 14px; }
     .system-section, .system-key { font-weight: 700; }
+    .boot-msg { font-family: 'Courier New', Consolas, monospace; font-size: 13px; letter-spacing: 0.3px; }
     text, tspan { white-space: pre; }
   </style>
 </defs>
@@ -177,7 +178,7 @@
 <circle cx="60" cy="20" r="5" fill="#10B981"><animate attributeName="opacity" values="1;0.55;1" dur="4s" begin="0.6s" repeatCount="indefinite"/></circle>
 <text x="590" y="25" text-anchor="middle" class="terminal-label">awand795@dev ~ % ./profile --live</text>
 <circle cx="1039" cy="20" r="4" fill="#F87171"><animate attributeName="opacity" values="1;0.15;1" dur="1.1s" repeatCount="indefinite"/></circle>
-<text x="1049" y="24" class="live-label">ACTIVE | 4m ago</text>
+<text x="1049" y="24" class="live-label">ACTIVE | 3m ago</text>
 
 <!-- Panels Background -->
 <rect x="14" y="64" width="488" height="468" rx="14" fill="#07111F" fill-opacity="0.38" stroke="url(#border)" stroke-opacity="0.42"/>
@@ -240,6 +241,17 @@
   </g>
 </g>
 
+<!-- Boot Sequence (appears before typing animation) -->
+<g clip-path="url(#portrait-clip)">
+  <g opacity="0"><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.70;0.85;1" dur="1.3s" begin="0.40s" fill="freeze"/><text x="259" y="224" text-anchor="middle" class="boot-msg"><tspan fill="#10B981">[  OK]</tspan><tspan fill="#94A3B8">  INITIALIZING AGENT CONSOLE...</tspan></text></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.70;0.85;1" dur="1.3s" begin="0.65s" fill="freeze"/><text x="259" y="246" text-anchor="middle" class="boot-msg"><tspan fill="#10B981">[  OK]</tspan><tspan fill="#94A3B8">  LOADING USER PROFILE...</tspan></text></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.70;0.85;1" dur="1.3s" begin="0.90s" fill="freeze"/><text x="259" y="268" text-anchor="middle" class="boot-msg"><tspan fill="#10B981">[  OK]</tspan><tspan fill="#94A3B8">  SYNCING GITHUB DATA...</tspan></text></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.70;0.85;1" dur="1.3s" begin="1.15s" fill="freeze"/><text x="259" y="290" text-anchor="middle" class="boot-msg"><tspan fill="#F59E0B">[WARN]</tspan><tspan fill="#94A3B8">  ESTABLISHING CONNECTION...</tspan></text></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.70;0.85;1" dur="1.3s" begin="1.40s" fill="freeze"/><text x="259" y="312" text-anchor="middle" class="boot-msg"><tspan fill="#10B981">[  OK]</tspan><tspan fill="#94A3B8">  AUTHENTICATING...</tspan></text></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.70;0.85;1" dur="1.3s" begin="1.65s" fill="freeze"/><text x="259" y="334" text-anchor="middle" class="boot-msg"><tspan fill="#10B981">[  OK]</tspan><tspan fill="#94A3B8">  DECRYPTING PAYLOAD...</tspan></text></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.70;0.85;1" dur="1.3s" begin="1.90s" fill="freeze"/><text x="259" y="356" text-anchor="middle" class="boot-msg"><tspan fill="#22D3EE">[ RUN]</tspan><tspan fill="#94A3B8">  AGENT PROFILE ACTIVE</tspan></text></g>
+</g>
+
 <!-- ASCII Art Portrait (generated from GitHub avatar) -->
 <g clip-path="url(#portrait-clip)">
 <text class="ascii" font-family="'Courier New',Consolas,monospace" font-size="6.5px" x="99.1" y="140.12" clip-path="url(#typing-0)" xml:space="preserve">....::::-=-----=---==---=+##*+*==*##%%%##*==-:. :::. :::.:-=+*##%*++#%%*=====-*@##</text>
@@ -292,7 +304,7 @@
 <!-- Blinking terminal cursor at end of portrait -->
 <g clip-path="url(#portrait-clip)">
   <rect x="420.9" y="448.1" width="4" height="7" rx="0.5" fill="#22D3EE" opacity="0">
-    <animate attributeName="opacity" values="1;0;1" keyTimes="0;0.5;1" dur="1.0s" begin="4.37s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0;1" keyTimes="0;0.5;1" dur="1.0s" begin="7.47s" repeatCount="indefinite"/>
   </rect>
 </g>
 

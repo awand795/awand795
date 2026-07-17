@@ -113,6 +113,7 @@
     .system-head { font-family: 'Courier New', Consolas, monospace; font-size: 16px; font-weight: 700; }
     .system-section, .system-footer, .system-row { font-family: 'Courier New', Consolas, monospace; font-size: 14px; }
     .system-section, .system-key { font-weight: 700; }
+    .boot-msg { font-family: 'Courier New', Consolas, monospace; font-size: 13px; letter-spacing: 0.3px; }
     text, tspan { white-space: pre; }
   </style>
 </defs>
@@ -187,6 +188,11 @@
     <!-- VS Code - bottom right -->
     <g><animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="3.5s" begin="1.4s" repeatCount="indefinite"/><use href="#icon-vscode" x="340" y="460"/></g>
   </g>
+</g>
+
+<!-- Boot Sequence (appears before typing animation) -->
+<g clip-path="url(#portrait-clip)">
+{{ BOOT_SEQUENCE }}
 </g>
 
 <!-- ASCII Art Portrait (generated from GitHub avatar) -->
