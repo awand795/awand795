@@ -115,6 +115,7 @@
     .system-section, .system-key { font-weight: 700; }
     .boot-msg { font-family: 'Courier New', Consolas, monospace; font-size: 13px; letter-spacing: 0.3px; }
     .matrix { font-family: 'Courier New', Consolas, 'MS Gothic', monospace; font-size: 9px; fill: #059669; letter-spacing: 1.5px; }
+    .typewriter-label { font-family: 'Courier New', Consolas, monospace; font-size: 10px; letter-spacing: 0.5px; fill: #64748B; }
     text, tspan { white-space: pre; }
   </style>
 </defs>
@@ -130,6 +131,17 @@
 <text x="590" y="25" text-anchor="middle" class="terminal-label">awand795@dev ~ % ./profile --live</text>
 <circle cx="1039" cy="20" r="4" fill="#DC2626"><animate attributeName="opacity" values="1;0.15;1" dur="1.1s" repeatCount="indefinite"/></circle>
 <text x="1049" y="24" class="live-label">{{ ACTIVE_STATUS }}</text>
+
+<!-- Typewriter Sound Indicator -- pulses during ASCII typing animation -->
+<g opacity="0">
+  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.95;1" dur="4.2s" begin="3.3s" fill="freeze"/>
+  <text x="1085" y="24" class="typewriter-label">
+    <tspan fill="#059669">♪
+      <animate attributeName="opacity" values="1;0.3;1" dur="0.5s" begin="3.4s" repeatCount="indefinite"/>
+    </tspan>
+    <tspan> TYPEWRITER</tspan>
+  </text>
+</g>
 
 <!-- Panels Background -->
 <rect x="14" y="64" width="488" height="468" rx="14" fill="#FFFFFF" fill-opacity="0.5" stroke="url(#border)" stroke-opacity="0.42"/>

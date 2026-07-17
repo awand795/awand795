@@ -8,6 +8,8 @@
 </picture>
 </p>
 
+> 🎵 *The console card features a live-typing ASCII portrait with a pulsing ♪ TYPEWRITER indicator during the animation sequence.*
+
 ---
 
 ## 🚀 About Me
