@@ -331,15 +331,54 @@ def fetch_ascii_portrait(avatar_url: str | None, width: int = 82, max_rows: int 
         tspan_output = "\n".join(lines)
         clip_output = "\n".join(clip_paths)
 
+        # Cache cursor position for compute_cursor_position()
+        global _CURSOR_X, _CURSOR_Y, _CURSOR_CHARS_TALL
+        last_line_y = start_y + (chars_tall - 1) * line_height
+        _CURSOR_X = start_x + text_width + 2  # 2px after last char
+        _CURSOR_Y = last_line_y - line_height + 0.5  # top of character cell
+        _CURSOR_CHARS_TALL = chars_tall
+
         total_anim = typing_delay_start + (chars_tall - 1) * typing_stagger + typing_duration
         print(f"  [+] Generated ASCII portrait: {width}x{chars_tall} chars (centered at x={start_x:.0f}, y={start_y:.0f})")
         print(f"  [+] Typing animation: {chars_tall} lines, {typing_duration}s each, "
               f"stagger {typing_stagger}s, total ~{total_anim:.1f}s")
+        print(f"  [+] Cursor at x={_CURSOR_X:.0f}, y={_CURSOR_Y:.0f}, "
+              f"delay={total_anim + 0.30:.2f}s")
         return tspan_output, clip_output
 
     except Exception as e:
         print(f"  [!] Failed to generate ASCII portrait: {e}", file=sys.stderr)
         return "", ""
+
+
+# Module-level cache for cursor position set by fetch_ascii_portrait
+_CURSOR_X = 0.0
+_CURSOR_Y = 0.0
+_CURSOR_CHARS_TALL = 0
+_CURSOR_DELAY_START = 0.30
+_CURSOR_STAGGER = 0.08
+_CURSOR_DURATION = 0.25
+
+
+def compute_cursor_position() -> dict:
+    """Return the blinking cursor position and animation delay.
+
+    Uses cached values from the last fetch_ascii_portrait call.
+    Falls back to defaults if no ASCII was generated.
+    """
+    if _CURSOR_CHARS_TALL == 0:
+        return {"x": "0", "y": "0", "delay": "0"}
+
+    # Cursor appears at end of last line after typing animation completes
+    # with a small pause (0.3s) for readability
+    typing_end = _CURSOR_DELAY_START + (_CURSOR_CHARS_TALL - 1) * _CURSOR_STAGGER + _CURSOR_DURATION
+    delay = typing_end + 0.30
+
+    return {
+        "x": f"{_CURSOR_X:.1f}",
+        "y": f"{_CURSOR_Y:.1f}",
+        "delay": f"{delay:.2f}",
+    }
 
 
 def format_timestamp() -> str:
@@ -435,6 +474,10 @@ def main():
     print(f"  Last Sync:  {last_sync}")
     print(f"  ASCII art:  {'Yes' if ascii_portrait else 'Fallback'}\n")
 
+    # Compute blinking cursor position (end of last ASCII line)
+    # and delay (after typing animation finishes)
+    cursor_data = compute_cursor_position()
+
     # 2. Define token replacements
     tokens = {
         "{{ REPOS }}": str(repos),
@@ -443,6 +486,9 @@ def main():
         "{{ LAST_SYNC }}": last_sync,
         "{{ ASCII_PORTRAIT }}": ascii_portrait,
         "{{ TYPING_CLIP_PATHS }}": typing_clip_paths,
+        "{{ CURSOR_X }}": str(cursor_data["x"]),
+        "{{ CURSOR_Y }}": str(cursor_data["y"]),
+        "{{ CURSOR_DELAY }}": str(cursor_data["delay"]),
     }
 
     # 3. Generate SVGs from templates
