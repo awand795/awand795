@@ -283,6 +283,7 @@ BOOT_MESSAGES = [
     ("OK",   "LOADING USER PROFILE..."),
     ("OK",   "SYNCING GITHUB DATA..."),
     ("WARN", "ESTABLISHING CONNECTION..."),
+    ("PROG", "SYSTEM INITIALIZATION"),
     ("OK",   "AUTHENTICATING..."),
     ("OK",   "DECRYPTING PAYLOAD..."),
     ("RUN",  "AGENT PROFILE ACTIVE"),
@@ -325,10 +326,10 @@ def generate_boot_sequence() -> tuple[str, float]:
 
         status_text = f"[{status:>4}]"
 
-        # Build status badge tspan (with optional blink animation for WARN)
+        # Build this line's content — standard message or progress bar
         if status == "WARN":
             # [WARN] blinks red before settling to amber — terminal tension moment
-            warn_badge = (
+            badge = (
                 f'<tspan fill="#EF4444">'
                 f'<animate attributeName="fill" '
                 f'values="#EF4444;#EF4444;#B91C1C;#EF4444;#B91C1C;#EF4444;#B91C1C;#F59E0B" '
@@ -336,20 +337,86 @@ def generate_boot_sequence() -> tuple[str, float]:
                 f'dur="{dur_per_line:.1f}s" begin="{begin:.2f}s" fill="freeze"/>'
                 f'{status_text}</tspan>'
             )
+            line_content = (
+                f'{badge}'
+                f'<tspan fill="#94A3B8">  {msg}</tspan>'
+            )
         else:
-            warn_badge = f'<tspan fill="{status_color}">{status_text}</tspan>'
+            badge = f'<tspan fill="{status_color}">{status_text}</tspan>'
+            line_content = (
+                f'{badge}'
+                f'<tspan fill="#94A3B8">  {msg}</tspan>'
+            )
 
-        lines.append(
-            f'  <g opacity="0">'
-            f'<animate attributeName="opacity" values="0;1;1;0;0" '
-            f'keyTimes="0;0.06;0.70;0.85;1" dur="{dur_per_line:.1f}s" '
-            f'begin="{begin:.2f}s" fill="freeze"/>'
-            f'<text x="{panel_center_x}" y="{y:.0f}" text-anchor="middle" '
-            f'class="boot-msg">'
-            f'{warn_badge}'
-            f'<tspan fill="#94A3B8">  {msg}</tspan>'
-            f'</text></g>'
-        )
+        # Build the line wrapper
+        if status == "PROG":
+            # Progress bar uses custom layout with rects
+            bar_width = 130
+            bar_height = 12
+            bar_rx = 2
+            bar_x = 188
+            bar_y = y - bar_height // 2 - 1
+            bar_dur = 1.0
+
+            pct_states = []
+            pct_values = [("0%", 0.0), ("25%", 0.25), ("50%", 0.50), ("75%", 0.75), ("100%", 1.0)]
+            for j, (pct_text, pct_time) in enumerate(pct_values):
+                show_at = begin + pct_time * bar_dur
+                if j < len(pct_values) - 1:
+                    hide_at = begin + pct_values[j + 1][1] * bar_dur
+                    pct_states.append(
+                        f'<tspan visibility="hidden" class="pbar-pct">'
+                        f'<set attributeName="visibility" to="visible" begin="{show_at:.2f}s" fill="freeze"/>'
+                        f'<set attributeName="visibility" to="hidden" begin="{hide_at:.2f}s" fill="freeze"/>'
+                        f'{pct_text}</tspan>'
+                    )
+                else:
+                    # Last value (100%) stays visible
+                    pct_states.append(
+                        f'<tspan visibility="hidden" class="pbar-pct">'
+                        f'<set attributeName="visibility" to="visible" begin="{show_at:.2f}s" fill="freeze"/>'
+                        f'{pct_text}</tspan>'
+                    )
+
+            line_svg = (
+                f'  <g opacity="0">'
+                f'<animate attributeName="opacity" values="0;1;1;0;0" '
+                f'keyTimes="0;0.06;0.70;0.85;1" dur="{dur_per_line:.1f}s" '
+                f'begin="{begin:.2f}s" fill="freeze"/>'
+                # Label
+                f'<text x="{panel_center_x - 70}" y="{y:.0f}" '
+                f'class="boot-msg" text-anchor="start">'
+                f'<tspan class="pbar-label">[LOAD]</tspan>'
+                f'</text>'
+                # Bar background
+                f'<rect x="{bar_x}" y="{bar_y}" width="{bar_width}" height="{bar_height}" '
+                f'rx="{bar_rx}" fill="none" stroke="#64748B" stroke-width="1" opacity="0.4"/>'
+                # Bar fill
+                f'<rect x="{bar_x + 1}" y="{bar_y + 1}" width="0" height="{bar_height - 2}" '
+                f'rx="{bar_rx - 0.5}" class="pbar-fill" opacity="0.55">'
+                f'<animate attributeName="width" from="0" to="{bar_width - 2}" '
+                f'dur="{bar_dur:.1f}s" begin="{begin:.2f}s" fill="freeze"/>'
+                f'</rect>'
+                # Percentage
+                f'<text x="{bar_x + bar_width + 8}" y="{y:.0f}" '
+                f'class="boot-msg" text-anchor="start">'
+                + "".join(pct_states) + ""
+                f'</text>'
+                f'</g>'
+            )
+        else:
+            line_svg = (
+                f'  <g opacity="0">'
+                f'<animate attributeName="opacity" values="0;1;1;0;0" '
+                f'keyTimes="0;0.06;0.70;0.85;1" dur="{dur_per_line:.1f}s" '
+                f'begin="{begin:.2f}s" fill="freeze"/>'
+                f'<text x="{panel_center_x}" y="{y:.0f}" text-anchor="middle" '
+                f'class="boot-msg">'
+                f'{line_content}'
+                f'</text></g>'
+            )
+
+        lines.append(line_svg)
 
     svg_markup = "\n".join(lines)
     boot_delay = first_delay + (total_lines - 1) * stagger + dur_per_line + 0.20

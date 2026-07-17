@@ -123,6 +123,7 @@
     .matrix { font-family: 'Courier New', Consolas, 'MS Gothic', monospace; font-size: 9px; fill: #22D3EE; letter-spacing: 1.5px; }
     .typewriter-label { font-family: 'Courier New', Consolas, monospace; font-size: 10px; letter-spacing: 0.5px; fill: #64748B; }
     .particle { fill: #22D3EE; }
+    .pbar-label, .pbar-fill, .pbar-pct { fill: #22D3EE; }
     text, tspan { white-space: pre; }
   </style>
 </defs>
