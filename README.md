@@ -1,17 +1,3 @@
-<p align="center">
-<picture>
-<source media="(max-width: 760px) and (prefers-color-scheme: dark)" srcset="./assets/hero/agent-console-mobile-dark-v2.svg">
-<source media="(max-width: 760px)" srcset="./assets/hero/agent-console-mobile-light-v2.svg">
-<source media="(prefers-color-scheme: dark)" srcset="./assets/hero/agent-console-dark-v2.svg">
-<source media="(prefers-color-scheme: light)" srcset="./assets/hero/agent-console-light-v2.svg">
-<img src="./assets/hero/agent-console.png" alt="AWANDA - Backend Developer" width="100%">
-</picture>
-</p>
-
-> 🎵 *The console card features a live-typing ASCII portrait with a pulsing ♪ TYPEWRITER indicator during the animation sequence.*
-
----
-
 ## 🚀 About Me
 
 Backend developer from **Sumatera Utara, Indonesia**. I craft **scalable systems**, solve real-world problems, and explore new technologies — always learning, always building.
