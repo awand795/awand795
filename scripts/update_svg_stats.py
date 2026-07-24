@@ -442,7 +442,7 @@ def generate_boot_sequence(username: str = "unknown", repos: int | str = "?", fo
     return svg_markup, boot_delay
 
 
-def fetch_avatar_base64(avatar_url: str | None, size: int = 130) -> str:
+def fetch_avatar_base64(avatar_url: str | None, size: int = 100) -> str:
     """Download the GitHub avatar and encode as base64 data URI for SVG embedding.
 
     Returns a base64 data URI string like 'data:image/png;base64,...'
