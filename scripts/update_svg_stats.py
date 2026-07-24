@@ -19,6 +19,7 @@ Design note:
   fresh every run, so stats never go stale.
 """
 
+import base64
 import html
 import io
 import json
@@ -441,6 +442,43 @@ def generate_boot_sequence(username: str = "unknown", repos: int | str = "?", fo
     return svg_markup, boot_delay
 
 
+def fetch_avatar_base64(avatar_url: str | None, size: int = 130) -> str:
+    """Download the GitHub avatar and encode as base64 data URI for SVG embedding.
+
+    Returns a base64 data URI string like 'data:image/png;base64,...'
+    or an empty string if the download/conversion fails.
+    """
+    if not HAS_PIL or not avatar_url:
+        print("  [!] Pillow not available or no avatar URL — skipping avatar base64")
+        # Return a transparent 1x1 pixel GIF as no-op fallback
+        return "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+
+    try:
+        req = urllib.request.Request(
+            f"{avatar_url}&s={size * 2}",
+            headers={"User-Agent": f"{GITHUB_USER}-svg-updater/1.0"},
+        )
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            img = Image.open(io.BytesIO(resp.read()))
+
+        # Resize to target size for smaller file size
+        img = img.resize((size, size), Image.LANCZOS)
+
+        # Save as PNG in memory
+        buf = io.BytesIO()
+        img.save(buf, format="PNG", optimize=True)
+        b64_data = base64.b64encode(buf.getvalue()).decode("ascii")
+
+        data_uri = f"data:image/png;base64,{b64_data}"
+        print(f"  [+] Avatar base64 generated: {size}x{size}px ({len(b64_data)} bytes)")
+        return data_uri
+
+    except Exception as e:
+        print(f"  [!] Failed to generate avatar base64: {e}", file=sys.stderr)
+        # Return a transparent 1x1 pixel GIF as no-op fallback
+        return "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+
+
 def _remove_background(img: Image.Image, margin: float = 0.10) -> Image.Image:
     """
     Auto-detect and crop away the background of a GitHub avatar.
@@ -816,6 +854,9 @@ def main():
     # and delay (after typing animation finishes)
     cursor_data = compute_cursor_position()
 
+    # Generate avatar base64 for inline image embedding
+    avatar_base64 = fetch_avatar_base64(avatar_url)
+
     # 2. Define token replacements
     tokens = {
         "{{ REPOS }}": str(repos),
@@ -824,6 +865,7 @@ def main():
         "{{ LAST_SYNC }}": last_sync,
         "{{ ASCII_PORTRAIT }}": ascii_portrait,
         "{{ TYPING_CLIP_PATHS }}": typing_clip_paths,
+        "{{ AVATAR_BASE64 }}": avatar_base64,
         "{{ MATRIX_RAIN }}": generate_matrix_rain(),
         "{{ BOOT_PARTICLES }}": generate_boot_particles(),
         "{{ BOOT_SEQUENCE }}": boot_svg,
@@ -847,10 +889,13 @@ def main():
 
     print(f"\n  [+] {generated}/{len(TEMPLATE_FILES)} SVG file(s) generated successfully.\n")
 
-    # Print token summary for debugging
+    # Print token summary for debugging (safe encode to avoid UnicodeEncodeError on Windows)
     print("  Token map:")
     for k, v in tokens.items():
-        print(f"    {k:25s} -> {v}")
+        try:
+            print(f"    {k:25s} -> {str(v)[:80]}")
+        except UnicodeEncodeError:
+            print(f"    {k:25s} -> [base64 data, {len(str(v))} chars]")
     print()
 
 

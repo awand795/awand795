@@ -23,5 +23,9 @@ assets/hero/agent-console-static.svg
 __pycache__/
 *.pyc
 
+# Unwanted project files (error artifacts & references)
+nul
+ref.svg
+
 # Local tool config
 .freebuff/
