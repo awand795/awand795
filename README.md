@@ -53,11 +53,11 @@ const awand795 = {
 <!--START_SECTION:waka-->
 
 ```txt
-From: 13 September 2026 - To: 20 September 2026
+From: 14 September 2026 - To: 21 September 2026
 
-Total Time: 11 hrs 39 mins
+Total Time: 7 hrs
 
-Other        11 hrs 26 mins        ████████████████████████▓   98.15 %
+Other        6 hrs 47 mins         ████████████████████████▒   96.92 %
 ```
 
 <!--END_SECTION:waka-->
