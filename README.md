@@ -53,15 +53,13 @@ const awand795 = {
 <!--START_SECTION:waka-->
 
 ```txt
-From: 20 October 2026 - To: 27 October 2026
+From: 21 October 2026 - To: 28 October 2026
 
-Total Time: 5 hrs 31 mins
+Total Time: 3 hrs 11 mins
 
-TypeScript   3 hrs 7 mins          ██████████████▒░░░░░░░░░░   56.69 %
-Markdown     1 hr 16 mins          █████▓░░░░░░░░░░░░░░░░░░░   23.21 %
-SQL          1 hr 1 min            ████▓░░░░░░░░░░░░░░░░░░░░   18.59 %
-JSON         2 mins                ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.73 %
-Other        2 mins                ░░░░░░░░░░░░░░░░░░░░░░░░░   00.64 %
+TypeScript   1 hr 14 mins          █████████▓░░░░░░░░░░░░░░░   38.76 %
+Markdown     1 hr 10 mins          █████████▒░░░░░░░░░░░░░░░   36.79 %
+SQL          46 mins               ██████░░░░░░░░░░░░░░░░░░░   24.45 %
 ```
 
 <!--END_SECTION:waka-->
